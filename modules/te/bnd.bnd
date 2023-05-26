@@ -1,0 +1,4 @@
+Bundle-Name: te
+Bundle-SymbolicName: te
+Bundle-Version: 1.0.0
+Export-Package: te.constants
