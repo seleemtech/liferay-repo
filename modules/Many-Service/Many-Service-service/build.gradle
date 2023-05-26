@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:Many-Service:Many-Service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../Many-Service-api/src/main/java"
+}
+
+group = "com.many"

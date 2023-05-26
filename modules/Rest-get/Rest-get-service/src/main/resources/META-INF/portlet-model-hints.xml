@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="Rest.get.model.Student">
+		<field name="uuid" type="String" />
+		<field name="studentId" type="long" />
+		<field name="studentName" type="String" />
+		<field name="studentAddress" type="String" />
+	</model>
+</model-hints>

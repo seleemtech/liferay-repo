@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+
+
+
+	<sql
+		id="com.att.hr.onestop.services.service.persistence.NewsEntryFinder.findByExpirationDate">
+    	<![CDATA[
+			SELECT * FROM ONESTOP.HROS_NEWSENTRY NE
+			WHERE NE.COMPANY_ID = ? AND NE.GROUP_ID = ? 
+			AND NE.NEWS_SCOPE_ID = ? 
+			AND NE.STATUS = ? AND NE.ARCHIVE = ?
+			AND (NE.EXPIRE_DATE >= ?)
+	    ]]>
+	</sql>
+	<sql
+		id="com.att.hr.onestop.services.service.persistence.NewsEntryFinder.findDashBoardNewsByExpirationDate">
+    	<![CDATA[
+			SELECT * FROM ONESTOP.HROS_NEWSENTRY NE
+			WHERE NE.COMPANY_ID = ? AND NE.GROUP_ID = ? 
+			AND NE.NEWS_SCOPE_ID = ? 
+			AND NE.STATUS = ? AND NE.ARCHIVE = ?
+			AND NE.ALLOWED_IN_DASHBOARD = ?
+			AND (NE.EXPIRE_DATE >= ?)
+	    ]]>
+	</sql>
+	<sql
+		id="com.att.hr.onestop.services.service.persistence.NewsEntryFinder.findHomePageNewsByExpirationDate">
+    	<![CDATA[
+			SELECT * FROM ONESTOP.HROS_NEWSENTRY NE
+			WHERE NE.COMPANY_ID = ? AND NE.GROUP_ID = ? 
+			AND NE.STATUS = ? AND NE.ARCHIVE = ?
+			AND NE.ALLOWED_IN_DASHBOARD = ?
+			AND (NE.EXPIRE_DATE >= ?)
+	    ]]>
+	</sql>
+
+</custom-sql>

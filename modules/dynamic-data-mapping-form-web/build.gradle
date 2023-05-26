@@ -1,0 +1,12 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.0"
+	compileOnly group: "javax.servlet.jsp", name: "javax.servlet.jsp-api", version: "2.3.1"
+}
+def nodeJsDirectory = "D:/RMS Portal/rms-portal/node_modules"
+
+buildCSS {
+	imports = [
+		new File(nodeJsDirectory, "@clayui/css/src/scss")
+	]
+}

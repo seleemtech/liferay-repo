@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_PRIME_CandidateStatusService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.CandidateStatusServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CandidateStatusServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CandidateStatusServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_CandidateStatusService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_CurrJobTitleService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.CurrJobTitleServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CurrJobTitleServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CurrJobTitleServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_CurrJobTitleService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_HighQualHeldService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.HighQualHeldServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="HighQualHeldServiceSoap" />
+		<parameter name="wsdlServiceElement" value="HighQualHeldServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_HighQualHeldService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_IndustryService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.IndustryServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="IndustryServiceSoap" />
+		<parameter name="wsdlServiceElement" value="IndustryServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_IndustryService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_InterviewNameService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.InterviewNameServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InterviewNameServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InterviewNameServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_InterviewNameService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_JobOpeningStatusService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.JobOpeningStatusServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="JobOpeningStatusServiceSoap" />
+		<parameter name="wsdlServiceElement" value="JobOpeningStatusServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_JobOpeningStatusService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_JobTypeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.JobTypeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="JobTypeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="JobTypeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_JobTypeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_NamePrefixService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.NamePrefixServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="NamePrefixServiceSoap" />
+		<parameter name="wsdlServiceElement" value="NamePrefixServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_NamePrefixService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_PriorityService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.PriorityServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="PriorityServiceSoap" />
+		<parameter name="wsdlServiceElement" value="PriorityServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_PriorityService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_SalaryRangeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.SalaryRangeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SalaryRangeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SalaryRangeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_SalaryRangeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_SalesStageService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.SalesStageServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SalesStageServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SalesStageServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_SalesStageService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_SkillSetService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.SkillSetServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SkillSetServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SkillSetServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_SkillSetService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_SourceByService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.SourceByServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SourceByServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SourceByServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_SourceByService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_WorkExperienceService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.WorkExperienceServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="WorkExperienceServiceSoap" />
+		<parameter name="wsdlServiceElement" value="WorkExperienceServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_WorkExperienceService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+	<service name="Plugin_PRIME_WorkTypeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.WorkTypeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="WorkTypeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="WorkTypeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_WorkTypeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+</deployment>

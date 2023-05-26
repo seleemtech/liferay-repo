@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.att.hr.onestop.services">
+	<namespace>HROS</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+
+	<entity local-service="true" name="NewsEntry"
+		remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="newsEntryId" db-name="NEWS_ENTRY_ID"
+			primary="true" type="long" />
+
+
+		<!-- Audit fields -->
+		<column name="groupId" db-name="GROUP_ID" type="long" />
+		<column name="companyId" db-name="COMPANY_ID" type="long" />
+		<column name="userId" db-name="USER_ID" type="long" />
+		<column name="createDate" db-name="CREATE_DATE" type="Date" />
+		<column name="modifiedDate" db-name="MODIFIED_DATE" type="Date" />
+
+		<column name="newsTitle" db-name="NEWS_TITLE" type="String" />
+		<column name="newsSummary" db-name="NEWS_SUMMARY" type="String" />
+		<column name="newsContent" db-name="NEWS_CONTENT" type="String" />
+		<column name="newsImageId" db-name="NEWS_IMAGE_ID" type="long" />
+		<column name="newsScopeId" db-name="NEWS_SCOPE_ID" type="long" />
+		<column name="archive" db-name="ARCHIVE" type="boolean" />
+		<column name="allowedInDashBoard"
+			db-name="ALLOWED_IN_DASHBOARD" type="boolean" />
+		<column name="expireDate" db-name="EXPIRE_DATE" type="Date" />
+		<column name="ToEmail" db-name="TO_NEWS_EMAIL" type="String" />
+
+		<column name="status" db-name="STATUS" type="int" />
+		<column name="statusByUserId" db-name="STATUS_BY_USER_ID"
+			type="long" />
+		<column name="statusByUserName" db-name="STATUS_BY_USER_NAME"
+			type="String" />
+		<column name="statusDate" db-name="STATUS_DATE" type="Date" />
+
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="NewsScopeId" return-type="Collection">
+			<finder-column name="newsScopeId" />
+		</finder>
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+		<reference package-path="com.liferay.portal" entity="User" />
+		<reference package-path="com.liferay.portlet.asset"
+			entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.ratings"
+			entity="RatingsStats" />
+		<reference entity="WorkflowInstanceLink"
+			package-path="com.liferay.portal" />
+	</entity>
+
+</service-builder>

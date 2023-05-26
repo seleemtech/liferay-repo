@@ -1,0 +1,10 @@
+Bundle-Name: job-opening-service-api
+Bundle-SymbolicName: com.job.opening.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.job.opening.service.exception,\
+	com.job.opening.service.model,\
+	com.job.opening.service.service,\
+	com.job.opening.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../job-opening-service-service/service.xml

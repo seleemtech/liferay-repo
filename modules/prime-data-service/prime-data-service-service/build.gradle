@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:prime-data-service:prime-data-service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../prime-data-service-api/src/main/java"
+}
+
+group = "com.prime.data.service"

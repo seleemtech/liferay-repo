@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_PRIME_WorkTypeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="com.prime.data.service.service.http.WorkTypeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="WorkTypeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="WorkTypeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_PRIME_WorkTypeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.service.data.prime.com" />
+	</service>
+</deployment>

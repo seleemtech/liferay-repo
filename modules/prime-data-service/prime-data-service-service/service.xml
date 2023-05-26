@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.prime.data.service">
+	<namespace>PRIME</namespace>
+	
+	<entity local-service="true" name="MainTable" remote-service="true" uuid="true">
+		<column name="categoryId" primary="true" type="long" id-type="increment"/>
+		<column name="category" type="String" />
+		<column name="name" type="String" />
+	<finder name="Category" return-type="Collection">
+        <finder-column name="category"></finder-column>
+    </finder>
+	</entity>
+	
+	<!-- For document mapping -->
+	
+	<entity local-service="true" name="DocumentMapper" remote-service="true" uuid="true">
+		<column name="recordId" primary="true" type="long"  />
+		<column name="moduleName" type="String" />
+		<column name="classPk" type="long" />
+		<column name="documentName" type="String" />
+		<column name="documentId" type="long" />
+		<column name="createdDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="userId" type="long" />
+	<finder name="ClassPK" return-type="DocumentMapper">
+        <finder-column name="classPk"></finder-column>
+    </finder>
+    <finder name="DocumentId" return-type="DocumentMapper">
+        <finder-column name="documentId"></finder-column>
+    </finder>
+	</entity>
+	
+	<!-- Create job openings -->
+	
+	<entity local-service="true" name="JobType" remote-service="true" uuid="true">
+		<column name="jobTypeId" primary="true" type="long" id-type="increment"/>
+		<column name="jobType" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="JobOpeningStatus" remote-service="true" uuid="true">
+		<column name="jobStatusId" primary="true" type="long" id-type="increment"/>
+		<column name="jobOpeningStatus" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="Industry" remote-service="true" uuid="true">
+		<column name="industryId" primary="true" type="long" id-type="increment"/>
+		<column name="industryName" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="SalaryRange" remote-service="true" uuid="true">
+		<column name="salaryRangeId" primary="true" type="long" id-type="increment"/>
+		<column name="salaryRange" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="WorkExperience" remote-service="true" uuid="true">
+		<column name="workExpId" primary="true" type="long" id-type="increment"/>
+		<column name="workExpRange" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="SalesStage" remote-service="true" uuid="true">
+		<column name="salesStageId" primary="true" type="long" id-type="increment"/>
+		<column name="salesStage" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="ProjectStatus" remote-service="true" uuid="true">
+		<column name="projectStatusId" primary="true" type="long" id-type="increment"/>
+		<column name="projectStatus" type="String" />
+	</entity>
+	
+	<!-- Create candidate -->
+	
+	<entity local-service="true" name="NamePrefix" remote-service="true" uuid="true">
+		<column name="namePrefixId" primary="true" type="long" id-type="increment"/>
+		<column name="namePrefix" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="HighQualHeld" remote-service="true" uuid="true">
+		<column name="highQualHeldId" primary="true" type="long" id-type="increment"/>
+		<column name="highQualHeld" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="CurrJobTitle" remote-service="true" uuid="true">
+		<column name="currJobTitleId" primary="true" type="long" id-type="increment"/>
+		<column name="currentJobTitle" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="SkillSet" remote-service="true" uuid="true">
+		<column name="skillSetId" primary="true" type="long" id-type="increment"/>
+		<column name="skillCategory" type="String" />
+		<column name="skillCategoryTools" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="CandidateStatus" remote-service="true" uuid="true">
+		<column name="candidateStatusId" primary="true" type="long" id-type="increment"/>
+		<column name="candidateStatus" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="SourceBy" remote-service="true" uuid="true">
+		<column name="sourceId" primary="true" type="long" id-type="increment"/>
+		<column name="sourceBy" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="WorkType" remote-service="true" uuid="true">
+		<column name="workTypeId" primary="true" type="long" id-type="increment"/>
+		<column name="workTypeName" type="String" />
+	</entity>
+	
+	<entity local-service="true" name="Priority" remote-service="true" uuid="true">
+		<column name="priorityId" primary="true" type="long" id-type="increment"/>
+		<column name="priorityName" type="String" />
+	</entity>
+	
+	<!-- Create Interview -->
+	
+	<entity local-service="true" name="InterviewName" remote-service="true" uuid="true">
+		<column name="interviewNameId" primary="true" type="long" id-type="increment"/>
+		<column name="interviewName" type="String" />
+	</entity>
+	
+</service-builder>

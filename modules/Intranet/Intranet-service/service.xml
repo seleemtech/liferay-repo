@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.intranet">
+	<namespace>INTRANET</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+
+
+	<entity local-service="true" name="EmployeeDetails"
+		remote-service="false">
+		<column name="employeeID" primary="true" type="long" />
+		<column name="employeename" type="String" />
+		<column name="gender" type="String" />
+		<column name="domain" type="String" />
+		<column name="contact" type="long" />
+		<column name="email" type="String" />
+		<column name="address" type="String" />
+		<column name="pannumber" type="String" />
+		<column name="passportNumber" type="String" />
+		<column name="aadhar" type="String" />
+		<column name="joiningDate" type="Date" />
+		<column name="dob" type="Date" />
+		<column name="maritalstatus" type="boolean" />
+		<column name="anniversaryDate" type="Date" />
+		<column name="fileEntryId" type="long" />
+
+		<finder name="employeeID" return-type="Collection">
+			<finder-column name="employeeID"></finder-column>
+		</finder>
+
+		<finder name="employeename" return-type="Collection">
+			<finder-column name="employeename"></finder-column>
+		</finder>
+	</entity>
+
+
+	<entity local-service="true" name="EducationDetails"
+		remote-service="false">
+		<column name="educationId" primary="true" type="long" />
+		<column name="employeeID" type="long" />
+		<column name="pgGraduation" type="String" />
+		<column name="pgSpecialization" type="String" />
+		<column name="pgUniversity" type="String" />
+		<column name="pgPassout" type="String" />
+		<column name="pgPercentage" type="String" />
+		<column name="graduation" type="String" />
+		<column name="specialization" type="String" />
+		<column name="university" type="String" />
+		<column name="passout" type="String" />
+		<column name="percentage" type="String" />
+		<column name="hscSchool" type="String" />
+		<column name="hscPassout" type="String" />
+		<column name="hscPercentage" type="String" />
+		<column name="sslcSchool" type="String" />
+		<column name="sslcPassout" type="String" />
+		<column name="sslcPercentage" type="String" />
+	</entity>
+
+
+	<entity local-service="true" name="ExperienceDetails"
+		remote-service="false">
+		<column name="experienceId" primary="true" type="long" />
+		<column name="employeeID" type="long" />
+		<column name="organization" type="String" />
+		<column name="designation" type="String" />
+		<column name="startDate" type="Date" />
+		<column name="endDate" type="Date" />
+	</entity>
+
+
+	<entity local-service="true" name="skills"
+		remote-service="false">
+		<column name="skillId" primary="true" type="long" />
+		<column name="employeeID" type="long" />
+		<column name="skill" type="String" />
+		<column name="version" type="String" />
+		<column name="certification" type="boolean" />
+
+		<finder name="skill" return-type="Collection">
+			<finder-column name="skill"></finder-column>
+		</finder>
+	</entity>
+	<entity local-service="true" name="Billclaim"
+		remote-service="false">
+		<column name="fooId" primary="true" type="long" />
+		<column name="employeeID" type="String" />
+		<column name="userName" type="String" />
+		<column name="claimType" type="String" />
+		<column name="claimDate" type="Date" />
+		<column name="claimAmount" type="long" />
+		<column name="attachBill" type="long" />
+		<column name="status" type="String" />
+		<finder name="userName" return-type="Collection">
+			<finder-column name="userName"></finder-column>
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="ComplaintBox"
+		remote-service="false">
+		<column name="fooId" primary="true" type="long" />
+		<column name="employeeId" type="String" />
+		<column name="userName" type="String" />
+		<column name="posistionType" type="String" />
+		<column name="submittedDate" type="Date" />
+		<column name="question1" type="int"></column>
+		<column name="question2" type="int"></column>
+		<column name="question3" type="int"></column>
+		<column name="question4" type="int"></column>
+		<column name="question5" type="int"></column>
+		<column name="question6" type="int"></column>
+		<column name="question7" type="int"></column>
+		<column name="question8" type="int"></column>
+		<column name="question9" type="int"></column>
+		<column name="question10" type="int"></column>
+		<column name="question11" type="int"></column>
+		<column name="question12" type="int"></column>
+		<column name="question13" type="int"></column>
+		<column name="question14" type="int"></column>
+		<column name="question15" type="int"></column>
+
+		<column name="description1" type="String" />
+		<column name="description2" type="String" />
+		<column name="description3" type="String" />
+	</entity>
+
+	<entity local-service="true" name="Specialization"
+		remote-service="false">
+		<column name="graduationCode" type="String" />
+		<column name="specializationName" type="String" />
+		<column name="spCode" type="long" primary="true" />
+		<finder return-type="Collection" name="graduationCode">
+			<finder-column name="graduationCode"></finder-column>
+		</finder>
+	</entity>
+
+
+	<entity local-service="true" name="Graduation"
+		remote-service="false">
+		<column name="graduationCode" type="String" primary="true" />
+		<column name="graduationName" type="String" />
+	</entity>
+
+
+
+
+
+
+</service-builder>

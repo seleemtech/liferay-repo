@@ -1,0 +1,18 @@
+Bundle-Name: candidate-create-web
+Bundle-SymbolicName: com.candidate.web
+Bundle-Version: 1.0.0
+Export-Package: com.candidate.web.constants
+Import-Package: \
+!android.*,\
+!com.android.*,\
+!dalvik.system,\
+!javax.annotation.meta,\
+!kotlin.internal.jdk7,\
+!kotlin.internal.jdk8,\
+!kotlin.reflect.jvm.internal,\
+!org.conscrypt,\
+!org.openjsse.javax.net.ssl,\
+!org.openjsse.net.ssl,\
+!org.xmlpull.v1,\
+!sun.security.ssl,\
+*

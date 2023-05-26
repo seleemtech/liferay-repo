@@ -1,0 +1,5 @@
+Bundle-Name: JSPFra
+Bundle-SymbolicName: jspfra
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.login.web;bundle-version="6.0.36"
+Portal-Bundle-Version: 7.4.3.61

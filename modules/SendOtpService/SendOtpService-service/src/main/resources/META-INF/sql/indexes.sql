@@ -1,0 +1,1 @@
+create index IX_287F72B9 on FOO_SendDb (uuid_[$COLUMN_LENGTH:75$], companyId);

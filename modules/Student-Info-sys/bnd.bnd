@@ -1,0 +1,4 @@
+Bundle-Name: Student-Info-sys
+Bundle-SymbolicName: com.student.info.sys
+Bundle-Version: 1.0.0
+Export-Package: com.student.info.sys.constants

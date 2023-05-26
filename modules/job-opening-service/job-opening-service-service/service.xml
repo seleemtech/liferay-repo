@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.job.opening.service">
+	<namespace>rms</namespace>
+	<entity local-service="true" name="Jobinfo"
+		remote-service="true" uuid="true">
+
+		<column name="jobId" primary="true" id-type="increment"
+			type="long" />
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="modifiedDate" type="Date" />
+		<column name="postingTitle" type="String" />
+		<column name="title" type="String" />
+		<column name="assignedRecruiter" type="String" />
+		<column name="targetDate" type="Date" />
+		<column name="jobopeningStatus" type="String" />
+		<column name="industry" type="String" />
+		<column name="jobResource" type="String"></column>
+		<column name="hiringManager" type="String" />
+		<column name="clientName" type="String" />
+		<column name="positions" type="String" />
+		<column name="dateOpened" type="Date" />
+		<column name="jobType" type="String" />
+		<column name="workExperience" type="String" />
+		<column name="skillSet" type="String" />
+		<column name="projectStatus" type="String" />
+		<column name="summaryId" type="long"></column>
+		<column name="otherId" type="long"></column>
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="dateOpened" />
+		</order>
+
+
+	</entity>
+
+	<entity local-service="true" name="Addressinfo"
+		remote-service="true" uuid="true">
+
+		<column name="addressId" primary="true" id-type="increment"
+			type="long" />
+		<column name="jobId" type="long" />
+		<column name="remote" type="boolean" />
+		<column name="city" type="String" />
+		<column name="country" type="String" />
+		<column name="state" type="String" />
+		<column name="postalCode" type="long" />
+
+		 <finder name="jobId" return-type="Addressinfo">
+		      <finder-column name="jobId" />
+		 </finder>
+
+	</entity>
+
+	<entity local-service="true" name="Descriptiveinfo"
+		remote-service="true" uuid="true">
+
+		<column name="descriptiveId" primary="true" id-type="increment"
+			type="long" />
+		<column name="jobId" type="long" />
+		<column name="jobDescription" type="String" />
+		<column name="requirements" type="String" />
+		<column name="benefits" type="String" />
+		
+		 <finder name="jobId" return-type="Descriptiveinfo">
+		      <finder-column name="jobId" />
+		 </finder>
+
+	</entity>
+</service-builder>

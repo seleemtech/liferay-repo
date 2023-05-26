@@ -1,0 +1,10 @@
+Bundle-Name: MyDB-api
+Bundle-SymbolicName: com.mydb.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.mydb.service.exception,\
+	com.mydb.service.model,\
+	com.mydb.service.service,\
+	com.mydb.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../MyDB-service/service.xml

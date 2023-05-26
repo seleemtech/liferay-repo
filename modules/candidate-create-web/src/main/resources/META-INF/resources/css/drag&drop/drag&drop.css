@@ -1,0 +1,88 @@
+th[draggable] a, th[draggable] {
+	cursor: move;
+}
+
+th[draggable] a:hover, th[draggable] a {
+	display: block;
+	text-decoration: none;
+	color: #333333;
+}
+
+.drag {
+	background-color: rgba(0, 0, 0, 0.25);
+	opacity: 0.25
+}
+
+.dnd-drag {
+	opacity: 0.25
+}
+
+.over {
+	background-color: rgba(0, 0, 255, 0.35);
+}
+
+.table-row:hover .icon-link {
+  opacity: 1;
+}
+
+.table-column-none {
+	display: none;
+}
+
+.columnEdit {
+	display: none;
+}
+
+.flex-row{
+	display: flex;
+	flex-direction: column !important;
+}
+
+
+.add-column {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.add-column img {
+  width: 21px;
+  height: 17px;
+  border: 0;
+  margin-top: 1px;
+}
+
+.add-column:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 85px;
+  font-size:12px;
+  background-color: #171b27;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  left: 0;
+}
+
+.add-column:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-link i{
+	font-size: 17px; 
+	color: #171b27;
+}
+
+
+.icon-link {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}

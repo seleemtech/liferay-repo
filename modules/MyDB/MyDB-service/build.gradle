@@ -1,0 +1,12 @@
+dependencies {
+	compile project(":modules:MyDB:MyDB-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	 compileOnly group: "com.liferay", name: "com.liferay.portal.spring.extender.api", version: "4.0.0"
+}
+
+buildService {
+	apiDir = "../MyDB-api/src/main/java"
+}
+
+group = "com.mydb.service"

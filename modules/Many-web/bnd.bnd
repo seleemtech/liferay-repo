@@ -1,0 +1,4 @@
+Bundle-Name: Many-web
+Bundle-SymbolicName: com.many.web
+Bundle-Version: 1.0.0
+Export-Package: com.many.web.constants

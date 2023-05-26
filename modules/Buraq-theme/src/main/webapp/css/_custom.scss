@@ -1,0 +1,175 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+#wrapper {
+  height: 12vh;
+}
+
+.shadow-div {
+  box-shadow: 1px 5px 8px #6e6c6c;
+  height: 12vh;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 100;
+}
+.logo_custom_css {
+  width: 5rem !important;
+  height: 3rem !important;
+  margin: 0.6rem 1rem 1rem 5rem;
+}
+.main-head {
+  display: flex;
+  gap: 15rem;
+}
+
+.ul_custom {
+  float: right;
+  display: flex;
+  margin: 1.5rem 2rem 2rem 2rem;
+  color: black;
+}
+.ul_custom li {
+  list-style: none;
+  padding-left: 2rem;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+#custom_site {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Stick No Bills', sans-serif;
+  background: -webkit-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.ul_custom li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+   transition: 1.5s linear;
+}
+.ul_custom li a:hover {
+  // background: -webkit-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+ background-image: linear-gradient(-45deg, #9ff669 0%,  #31de79 100%);
+}
+
+#footer {
+  height: 73.5vh;
+  width: 100%;
+  background-color: black;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem 2rem 5rem;
+}
+
+.footer-main > div {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 15rem;
+}
+
+.footer-main > div > :nth-child(1) {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.footer-main > div > .second-span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-left: 0;
+  line-height: 1.7rem;
+  letter-spacing: 0.6px;
+}
+
+.footer-main > div > .second-main-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-wrap: break-word;
+}
+.footer-main > div > .second-main-div > .main {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+.footer-main > div > .second-main-div > .inside-span {
+  display: flex;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 0;
+}
+.footer-main > div > .second-main-div > .inside-span > :nth-child(1) {
+  width: 0.5rem;
+}
+.footer-main > div > .second-main-div > .inside-span > :nth-child(2) {
+  width: 13rem;
+  margin-left: 1.5rem;
+  letter-spacing: 0.6px;
+  line-height: 1.5rem;
+  margin-top: -0.4rem;
+}
+
+.footer-main > div > .second-main-div > .main a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  text-decoration: none;
+  padding-left: 0.5rem;
+}
+
+.footer-main > div > :nth-child(3) > ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+}
+
+.footer-main > div > :nth-child(3) {
+  margin-top: 2rem;
+}
+
+.footer-main > div > :nth-child(3) > ul > :nth-child(1) > :last-child {
+  height: 50px;
+  width: 50px;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  position: relative;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.footer-main > div > :nth-child(3) > ul > :nth-child(1) > :last-child:hover {
+  color: #31de79;
+}
+
+.footer-main > div > :nth-child(3) > ul > :nth-child(1) > :last-child > span {
+  position: absolute;
+  font-size: 1.6rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.last-copy-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}

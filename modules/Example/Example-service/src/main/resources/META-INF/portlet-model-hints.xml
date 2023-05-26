@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="Example.model.FirstTable">
+		<field name="soId" type="long" />
+		<field name="Name" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="Example.model.SecondTable">
+		<field name="coId" type="long" />
+		<field name="coName" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+</model-hints>

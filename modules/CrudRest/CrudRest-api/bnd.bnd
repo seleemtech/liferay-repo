@@ -1,0 +1,6 @@
+Bundle-Name: CrudRest-api
+Bundle-SymbolicName: CrudRest.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	CrudRest.dto.v1_0,\
+	CrudRest.resource.v1_0

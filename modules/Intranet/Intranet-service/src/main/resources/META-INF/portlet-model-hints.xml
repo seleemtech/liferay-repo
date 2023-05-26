@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.intranet.model.Billclaim">
+		<field name="fooId" type="long" />
+		<field name="employeeID" type="String" />
+		<field name="userName" type="String" />
+		<field name="claimType" type="String" />
+		<field name="claimDate" type="Date" />
+		<field name="claimAmount" type="long" />
+		<field name="attachBill" type="long" />
+		<field name="status" type="String" />
+	</model>
+	<model name="com.intranet.model.ComplaintBox">
+		<field name="fooId" type="long" />
+		<field name="employeeId" type="String" />
+		<field name="userName" type="String" />
+		<field name="posistionType" type="String" />
+		<field name="submittedDate" type="Date" />
+		<field name="question1" type="int" />
+		<field name="question2" type="int" />
+		<field name="question3" type="int" />
+		<field name="question4" type="int" />
+		<field name="question5" type="int" />
+		<field name="question6" type="int" />
+		<field name="question7" type="int" />
+		<field name="question8" type="int" />
+		<field name="question9" type="int" />
+		<field name="question10" type="int" />
+		<field name="question11" type="int" />
+		<field name="question12" type="int" />
+		<field name="question13" type="int" />
+		<field name="question14" type="int" />
+		<field name="question15" type="int" />
+		<field name="description1" type="String" />
+		<field name="description2" type="String" />
+		<field name="description3" type="String" />
+	</model>
+	<model name="com.intranet.model.EducationDetails">
+		<field name="educationId" type="long" />
+		<field name="employeeID" type="long" />
+		<field name="pgGraduation" type="String" />
+		<field name="pgSpecialization" type="String" />
+		<field name="pgUniversity" type="String" />
+		<field name="pgPassout" type="String" />
+		<field name="pgPercentage" type="String" />
+		<field name="graduation" type="String" />
+		<field name="specialization" type="String" />
+		<field name="university" type="String" />
+		<field name="passout" type="String" />
+		<field name="percentage" type="String" />
+		<field name="hscSchool" type="String" />
+		<field name="hscPassout" type="String" />
+		<field name="hscPercentage" type="String" />
+		<field name="sslcSchool" type="String" />
+		<field name="sslcPassout" type="String" />
+		<field name="sslcPercentage" type="String" />
+	</model>
+	<model name="com.intranet.model.EmployeeDetails">
+		<field name="employeeID" type="long" />
+		<field name="employeename" type="String" />
+		<field name="gender" type="String" />
+		<field name="domain" type="String" />
+		<field name="contact" type="long" />
+		<field name="email" type="String" />
+		<field name="address" type="String" />
+		<field name="pannumber" type="String" />
+		<field name="passportNumber" type="String" />
+		<field name="aadhar" type="String" />
+		<field name="joiningDate" type="Date" />
+		<field name="dob" type="Date" />
+		<field name="maritalstatus" type="boolean" />
+		<field name="anniversaryDate" type="Date" />
+		<field name="fileEntryId" type="long" />
+	</model>
+	<model name="com.intranet.model.ExperienceDetails">
+		<field name="experienceId" type="long" />
+		<field name="employeeID" type="long" />
+		<field name="organization" type="String" />
+		<field name="designation" type="String" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+	</model>
+	<model name="com.intranet.model.Graduation">
+		<field name="graduationCode" type="String" />
+		<field name="graduationName" type="String" />
+	</model>
+	<model name="com.intranet.model.skills">
+		<field name="skillId" type="long" />
+		<field name="employeeID" type="long" />
+		<field name="skill" type="String" />
+		<field name="version" type="String" />
+		<field name="certification" type="boolean" />
+	</model>
+	<model name="com.intranet.model.Specialization">
+		<field name="graduationCode" type="String" />
+		<field name="specializationName" type="String" />
+		<field name="spCode" type="long" />
+	</model>
+</model-hints>

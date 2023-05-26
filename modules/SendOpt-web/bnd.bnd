@@ -1,0 +1,4 @@
+Bundle-Name: SendOpt-web
+Bundle-SymbolicName: SendOpt.web
+Bundle-Version: 1.0.0
+Export-Package: SendOpt.web.constants

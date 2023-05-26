@@ -1,0 +1,10 @@
+Bundle-Name: Rest-get-api
+Bundle-SymbolicName: Rest.get.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	Rest.get.exception,\
+	Rest.get.model,\
+	Rest.get.service,\
+	Rest.get.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Rest-get-service/service.xml

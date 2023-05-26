@@ -1,0 +1,1 @@
+create index IX_B54D0441 on RG_Register (uuid_[$COLUMN_LENGTH:75$]);

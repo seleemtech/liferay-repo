@@ -1,0 +1,6 @@
+Bundle-Name: appointments-api
+Bundle-SymbolicName: appointments.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	appointments.dto.v1_0,\
+	appointments.resource.v1_0

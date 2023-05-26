@@ -1,0 +1,5 @@
+Bundle-Name: CrudRestBuild-test
+Bundle-SymbolicName: CrudRestBuild.test
+Bundle-Version: 1.0.0
+-includeresource: CrudRestBuild.client.jar=../CrudRestBuild-client/build/libs/CrudRestBuild.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.job.opening.service.model.Addressinfo">
+		<field name="uuid" type="String" />
+		<field name="addressId" type="long" />
+		<field name="jobId" type="long" />
+		<field name="remote" type="boolean" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="state" type="String" />
+		<field name="postalCode" type="long" />
+	</model>
+	<model name="com.job.opening.service.model.Descriptiveinfo">
+		<field name="uuid" type="String" />
+		<field name="descriptiveId" type="long" />
+		<field name="jobId" type="long" />
+		<field name="jobDescription" type="String" />
+		<field name="requirements" type="String" />
+		<field name="benefits" type="String" />
+	</model>
+	<model name="com.job.opening.service.model.Jobinfo">
+		<field name="uuid" type="String" />
+		<field name="jobId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="modifiedDate" type="Date" />
+		<field name="postingTitle" type="String" />
+		<field name="title" type="String" />
+		<field name="assignedRecruiter" type="String" />
+		<field name="targetDate" type="Date" />
+		<field name="jobopeningStatus" type="String" />
+		<field name="industry" type="String" />
+		<field name="jobResource" type="String" />
+		<field name="hiringManager" type="String" />
+		<field name="clientName" type="String" />
+		<field name="positions" type="String" />
+		<field name="dateOpened" type="Date" />
+		<field name="jobType" type="String" />
+		<field name="workExperience" type="String" />
+		<field name="skillSet" type="String" />
+		<field name="projectStatus" type="String" />
+		<field name="summaryId" type="long" />
+		<field name="otherId" type="long" />
+	</model>
+</model-hints>

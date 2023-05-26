@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<custom-sql>
+<sql id="getByCrudNameAndCrudNo">
+<![CDATA[ 
+select * from foo_crud where crudName= ? && crudNo= ? 
+]]>
+
+</sql>
+
+</custom-sql>

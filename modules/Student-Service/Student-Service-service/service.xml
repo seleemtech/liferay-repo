@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.student.info.service">
+	<namespace>ST</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity name="Student" local-service="true"
+		remote-service="true" >
+		<column name="studentId" type="long" primary="true" />
+		<column name="studentName" type="String" />
+		<column name="studentPlace" type="String" />
+		<column name="studentEmail" type="String" />
+		<column name="companyId" type="long" />
+		<column name="parentId" type="Collection" entity="Parent"
+			mapping-table="Students_Parents" />
+		<column name="courseId" type="Collection" entity="Course"
+			mapping-table="Students_Courses" />
+		<column name="teacherId" type="Collection" entity="Teacher"
+			mapping-table="Students_Teachers" />
+	</entity>
+	<entity name="Parent" local-service="true" remote-service="true"
+		>
+		<column name="parentId" type="long" primary="true" />
+		<column name="parentName" type="String" />
+		<column name="parentContact" type="long" />
+		<column name="companyId" type="long" />
+		<column name="studentsId" type="Collection" entity="Student"
+			mapping-table="Students_Parents" />
+	</entity>
+		<entity name="Course" local-service="true" remote-service="true"
+		>
+		<column name="courseId" type="long" primary="true" />
+		<column name="courseName" type="String" />
+		<column name="subject" type="String" />
+		<column name="companyId" type="long" />
+		<column name="studentsId" type="Collection" entity="Student"
+			mapping-table="Students_Courses" />
+		<column name="teacherId" type="Collection" entity="Teacher"
+			mapping-table="Courses_Teachers" />
+	</entity>
+	<entity name="Teacher" local-service="true" remote-service="true"
+		>
+		<column name="teacherId" type="long" primary="true" />
+		<column name="teacherName" type="String" />
+		<column name="teacherEmail" type="String" />
+		<column name="subject" type="String" />
+		<column name="companyId" type="long" />
+		<column name="studentsId" type="Collection" entity="Student"
+			mapping-table="Students_Teachers" />
+		<column name="courseId" type="Collection" entity="Course"
+			mapping-table="Courses_Teachers" />
+	</entity>
+</service-builder>

@@ -1,0 +1,10 @@
+Bundle-Name: Student-Service-api
+Bundle-SymbolicName: com.student.info.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.student.info.service.exception,\
+	com.student.info.service.model,\
+	com.student.info.service.service,\
+	com.student.info.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Student-Service-service/service.xml

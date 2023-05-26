@@ -1,0 +1,10 @@
+Bundle-Name: onestop-services-api
+Bundle-SymbolicName: com.att.hr.onestop.services.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.att.hr.onestop.services.exception,\
+	com.att.hr.onestop.services.model,\
+	com.att.hr.onestop.services.service,\
+	com.att.hr.onestop.services.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../onestop-services-service/service.xml

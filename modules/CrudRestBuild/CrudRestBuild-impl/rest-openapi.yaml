@@ -1,0 +1,103 @@
+components:
+  schemas:
+    CrudRest:
+      description: Represents appointment.
+      properties:
+        crudId:
+          type: integer
+          format: int64
+        crudName:
+          type: string
+        crudNo:
+          type: integer
+          format: int64
+      type: object
+info:
+    description: "CrudRestBuild REST API"
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: "CrudRestBuild"
+    version: v1.0
+openapi: 3.0.1
+paths: 
+  "/{crudId}/cruds":
+    get:
+      operationId: getCrudPage
+      parameters:
+        - in: path
+          name: crudId
+          required: true
+          schema:
+            type: integer 
+            format: int64
+      responses:
+        200:
+          content:
+            appliction/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+                type: array
+            appliction/xml:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+                type: array 
+          description: "Get appoinments"
+      tags: ["CrudRest"]   
+  "/{crudId}/cruds/update":  
+    put:
+      parameters:
+        - in: path
+          name: crudId
+          required: true
+          schema:
+            type: integer 
+            format: int64
+      requestBody:
+        content:
+          appliction/json:
+              schema:
+                $ref: "#/components/schemas/CrudRest"
+          appliction/xml:
+              schema:
+                $ref: "#/components/schemas/CrudRest"      
+      responses:
+        200:
+          content:
+            appliction/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+            appliction/xml:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+          description: "Get appoinments"
+      tags: ["CrudRest"]  
+  "/cruds/Add":     
+    post:
+      requestBody:
+        content:
+          appliction/json:
+              schema:
+                $ref: "#/components/schemas/CrudRest"
+          appliction/xml:
+              schema:
+                $ref: "#/components/schemas/CrudRest"      
+      responses:
+        200:
+          content:
+            appliction/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+            appliction/xml:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CrudRest"
+          description: "Get appoinments"
+      tags: ["CrudRest"]    
+       
+     

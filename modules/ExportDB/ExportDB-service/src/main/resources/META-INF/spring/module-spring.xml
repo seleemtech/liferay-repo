@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.exportdb.service.service.impl.StudentLocalServiceImpl" id="com.exportdb.service.service.StudentLocalService" />
+	<bean class="com.exportdb.service.service.persistence.impl.StudentModelArgumentsResolver" id="com.exportdb.service.service.persistence.impl.StudentModelArgumentsResolver" />
+	<bean class="com.exportdb.service.service.persistence.impl.StudentPersistenceImpl" id="com.exportdb.service.service.persistence.StudentPersistence">
+		<property name="dataSource" ref="ext" />
+	</bean>
+</beans>

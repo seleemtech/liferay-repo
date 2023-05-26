@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.interview.info">
+	<namespace>RMS</namespace>
+    <entity local-service="true" name="InterviewInfo" remote-service="true" uuid="true">
+        <column name="interviewId" primary="true" type="long" id-type="increment"/>
+        <column name="interviewName" type="String" />
+        <column name="postingTitleId" type="long" />
+        <column name="candidateId" type="long" />
+        <column name="clientId" type="long" />
+        <column name="interviewFrom" type="long" />
+        <column name="interviewTo" type="long" />
+        <column name="interviewers" type="String" />
+        <column name="interviewOwner" type="long" />
+        <column name="scheduleComments" type="String" />
+        <column name="location" type="String" />
+        <column name="attachmentId" type="long" />
+         <finder name="Document" return-type="InterviewInfo">
+            <finder-column name="attachmentId"></finder-column>
+        </finder>
+        
+        <!-- Audit fields -->
+        
+        <column name="createdBy" type="long" />
+        <column name="createdDate" type="long" />
+        <column name="modifiedBy" type="long" />
+        <column name="modifiedDate" type="long" />        
+    </entity>
+</service-builder>

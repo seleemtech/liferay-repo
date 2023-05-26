@@ -1,0 +1,9 @@
+apiDir: "../CrudRest-api/src/main/java"
+apiPackagePath: "CrudRest"
+application:
+    baseURI: "/CrudRest"
+    className: "CrudRestApplication"
+    name: "CrudRest"
+author: "DELL"
+clientDir: "../CrudRest-client/src/main/java"
+testDir: "../CrudRest-test/src/testIntegration/java"

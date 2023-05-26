@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.0'
+compile project(":modules:Student-Service:Student-Service-api")
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.0"
+}

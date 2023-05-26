@@ -1,0 +1,10 @@
+Bundle-Name: prime-data-service-api
+Bundle-SymbolicName: com.prime.data.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.prime.data.service.exception,\
+	com.prime.data.service.model,\
+	com.prime.data.service.service,\
+	com.prime.data.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../prime-data-service-service/service.xml

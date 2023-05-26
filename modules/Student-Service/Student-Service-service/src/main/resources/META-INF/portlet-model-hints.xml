@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.student.info.service.model.Course">
+		<field name="courseId" type="long" />
+		<field name="courseName" type="String" />
+		<field name="subject" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="com.student.info.service.model.Parent">
+		<field name="parentId" type="long" />
+		<field name="parentName" type="String" />
+		<field name="parentContact" type="long" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="com.student.info.service.model.Student">
+		<field name="studentId" type="long" />
+		<field name="studentName" type="String" />
+		<field name="studentPlace" type="String" />
+		<field name="studentEmail" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+	<model name="com.student.info.service.model.Teacher">
+		<field name="teacherId" type="long" />
+		<field name="teacherName" type="String" />
+		<field name="teacherEmail" type="String" />
+		<field name="subject" type="String" />
+		<field name="companyId" type="long" />
+	</model>
+</model-hints>

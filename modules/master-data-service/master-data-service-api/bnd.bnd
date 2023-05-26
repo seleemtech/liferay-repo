@@ -1,0 +1,10 @@
+Bundle-Name: master-data-service-api
+Bundle-SymbolicName: com.master.data.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.master.data.exception,\
+	com.master.data.model,\
+	com.master.data.service,\
+	com.master.data.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../master-data-service-service/service.xml

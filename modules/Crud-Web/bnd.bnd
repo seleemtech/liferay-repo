@@ -1,0 +1,4 @@
+Bundle-Name: Crud-Web
+Bundle-SymbolicName: com.crud.web
+Bundle-Version: 1.0.0
+Export-Package: com.crud.web.constants

@@ -1,0 +1,7 @@
+Bundle-Name: rms-language-bundle
+Bundle-SymbolicName: com.rms.language.bundle
+Bundle-Version: 1.0.0
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language";\
+		service.ranking:Long="-1"

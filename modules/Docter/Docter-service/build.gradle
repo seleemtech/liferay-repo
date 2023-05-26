@@ -1,0 +1,12 @@
+dependencies {
+	compile project(":modules:Docter:Docter-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+
+}
+
+buildService {
+	apiDir = "../Docter-api/src/main/java"
+}
+
+group = "com.docter.service"

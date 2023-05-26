@@ -1,0 +1,97 @@
+.stage-main {
+	padding: 5px 0px 0px 0px;
+}
+
+.stage-main .stage-info {
+	font-size: 0.875rem;
+	font-family: InterMedium;
+	cursor: pointer;
+	font-weight: 600;
+	color: black;
+	margin-bottom: 5px;
+}
+
+.stage-parent {
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 16px 0px 16px;
+	border-top: 1px solid #e5e5e5;
+}
+
+.stage-column {
+	border-bottom: 1px solid #e5e5e5;
+	border-left: 0px;
+	border-right: 0px;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	margin: 0px;
+	overflow: hidden;
+	background-color: #f8f8f8;
+	text-align: center;
+	color: #111;
+	float: left;
+	cursor: pointer;
+	padding: 16px 0;
+	flex: 1 1 0px;
+}
+
+.stage-column:hover {
+	background-color: white;
+}
+
+.stage-column a:hover {
+	color: black;
+}
+
+.stage-column a {
+	outline: none medium;
+	text-decoration: none;
+	color: black;
+}
+
+.stage-column a>p {
+	font-size: 18px;
+	display: block;
+	text-align: center;
+	margin: 0px;
+	padding-bottom: 1px;
+	font-weight: 600;
+}
+
+.stage-column a>span {
+	font-size: 14px;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+}
+
+.cand-stage-new {
+	border-top: 2px solid rgba(41, 106, 207, 0.5);
+}
+
+.cand-stage-inreview {
+	border-top: 2px solid rgba(170, 83, 154, 0.5);
+}
+
+.cand-stage-available {
+	border-top: 2px solid rgba(160, 144, 25, 0.5);
+}
+
+.cand-stage-engaged {
+	border-top: 2px solid rgba(216, 114, 48, 0.5);
+}
+
+.cand-stage-hired {
+	border-top: 2px solid rgba(26, 147, 106, 0.5);
+}
+
+.cand-stage-offered {
+	border-top: 2px solid rgba(117, 91, 186, 0.5);
+}
+
+.cand-stage-rejected {
+	border-top: 2px solid rgba(220, 87, 87, 0.5);
+}

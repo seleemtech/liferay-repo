@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.many.model.Course">
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="courseId" type="long" />
+		<field name="courseName" type="String" />
+		<field name="courseGroup" type="String" />
+	</model>
+	<model name="com.many.model.Student">
+		<field name="uuid" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="studentId" type="long" />
+		<field name="studentName" type="String" />
+		<field name="studentPlace" type="String" />
+		<field name="studentCollege" type="String" />
+	</model>
+</model-hints>

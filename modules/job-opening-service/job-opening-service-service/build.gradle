@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:job-opening-service:job-opening-service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../job-opening-service-api/src/main/java"
+}
+
+group = "com.job.opening.service"

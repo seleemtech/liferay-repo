@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.master.data.model.DocumentMapping">
+		<field name="uuid" type="String" />
+		<field name="recordId" type="long" />
+		<field name="moduleName" type="String" />
+		<field name="classPk" type="long" />
+		<field name="documentName" type="String" />
+		<field name="documentId" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

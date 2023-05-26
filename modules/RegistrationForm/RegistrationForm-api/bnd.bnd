@@ -1,0 +1,10 @@
+Bundle-Name: RegistrationForm-api
+Bundle-SymbolicName: com.rigistration.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.rigistration.service.exception,\
+	com.rigistration.service.model,\
+	com.rigistration.service.service,\
+	com.rigistration.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../RegistrationForm-service/service.xml

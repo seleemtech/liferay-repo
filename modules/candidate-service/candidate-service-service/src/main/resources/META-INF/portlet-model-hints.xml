@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.candidate.service.model.CandidateInfo">
+		<field name="uuid" type="String" />
+		<field name="candidateId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="email" type="String" />
+		<field name="secondaryEmail" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="street" type="String" />
+		<field name="country" type="String" />
+		<field name="city" type="String" />
+		<field name="state" type="String" />
+		<field name="zipCode" type="String" />
+		<field name="houseNumber" type="String" />
+		<field name="website" type="String" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.candidate.service.model.CandidateOtherInfo">
+		<field name="uuid" type="String" />
+		<field name="candidateOtherInfoId" type="long" />
+		<field name="candidateId" type="long" />
+		<field name="candidateStatus" type="String" />
+		<field name="candidateStage" type="String" />
+		<field name="source" type="String" />
+		<field name="candidateOwner" type="String" />
+		<field name="institute" type="String" />
+		<field name="department" type="String" />
+		<field name="degree" type="String" />
+		<field name="fromDuration" type="String" />
+		<field name="toDuration" type="String" />
+		<field name="occupation" type="String" />
+		<field name="company" type="String" />
+		<field name="summary" type="String" />
+		<field name="fromWorkDuration" type="String" />
+		<field name="toWorkDuration" type="String" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="folderId" type="long" />
+	</model>
+	<model name="com.candidate.service.model.ProfessionalDetails">
+		<field name="uuid" type="String" />
+		<field name="professionalDetailsId" type="long" />
+		<field name="candidateId" type="long" />
+		<field name="expectedSalary" type="double" />
+		<field name="currentSalary" type="double" />
+		<field name="skillSet" type="String" />
+		<field name="additionalInfo" type="String" />
+		<field name="currentEmployer" type="String" />
+		<field name="workType" type="String" />
+		<field name="experience " type="String" />
+		<field name="qualification" type="String" />
+		<field name="jobTitle" type="String" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

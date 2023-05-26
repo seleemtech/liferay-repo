@@ -1,0 +1,10 @@
+Bundle-Name: SendOtpService-api
+Bundle-SymbolicName: SendOtpService.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	SendOtpService.exception,\
+	SendOtpService.model,\
+	SendOtpService.service,\
+	SendOtpService.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../SendOtpService-service/service.xml

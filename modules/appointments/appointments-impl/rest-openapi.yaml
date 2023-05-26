@@ -1,0 +1,48 @@
+components:
+  schemas:
+    Appoinment:
+      description: Represents appointment.
+      properties:
+        date:
+          format: date-time
+          type: string
+        id:
+          format: int64
+          type: integer
+        title:
+          type: string
+      type: object
+info:
+  description: "Appoinments REST API"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  title: "Appoinments"
+  version: v1.0
+openapi: 3.0.1
+paths: 
+  "/sites/{siteId}/appointments":
+    get:
+      operationId: getSiteAppointmentsPage
+      parameters:
+        - in: path
+          name: siteId
+          required: true
+          schema:
+            format: int64
+            type: integer 
+      responses:
+        200:
+          content:
+            appliction/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Appoinment"
+                type: array
+            appliction/xml:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Appoinment"
+                type: array 
+          description: "Get appoinments"
+      tags: ["Appoinment"]    

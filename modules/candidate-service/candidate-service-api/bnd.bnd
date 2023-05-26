@@ -1,0 +1,10 @@
+Bundle-Name: candidate-service-api
+Bundle-SymbolicName: com.candidate.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.candidate.service.exception,\
+	com.candidate.service.model,\
+	com.candidate.service.service,\
+	com.candidate.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../candidate-service-service/service.xml

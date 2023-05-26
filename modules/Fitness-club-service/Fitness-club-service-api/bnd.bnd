@@ -1,0 +1,10 @@
+Bundle-Name: Fitness-club-service-api
+Bundle-SymbolicName: com.fitness.club.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.fitness.club.service.exception,\
+	com.fitness.club.service.model,\
+	com.fitness.club.service.service,\
+	com.fitness.club.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Fitness-club-service-service/service.xml

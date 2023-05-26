@@ -1,0 +1,9 @@
+apiDir: "../appointments-api/src/main/java"
+apiPackagePath: "appointments"
+application:
+    baseURI: "/appointments"
+    className: "AppointmentsApplication"
+    name: "Appointments"
+author: "DELL"
+clientDir: "../appointments-client/src/main/java"
+testDir: "../appointments-test/src/testIntegration/java"

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.prime.data.service.model.CandidateStatus">
+		<field name="uuid" type="String" />
+		<field name="candidateStatusId" type="long" />
+		<field name="candidateStatus" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.CurrJobTitle">
+		<field name="uuid" type="String" />
+		<field name="currJobTitleId" type="long" />
+		<field name="currentJobTitle" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.DocumentMapper">
+		<field name="uuid" type="String" />
+		<field name="recordId" type="long" />
+		<field name="moduleName" type="String" />
+		<field name="classPk" type="long" />
+		<field name="documentName" type="String" />
+		<field name="documentId" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.prime.data.service.model.HighQualHeld">
+		<field name="uuid" type="String" />
+		<field name="highQualHeldId" type="long" />
+		<field name="highQualHeld" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.Industry">
+		<field name="uuid" type="String" />
+		<field name="industryId" type="long" />
+		<field name="industryName" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.InterviewName">
+		<field name="uuid" type="String" />
+		<field name="interviewNameId" type="long" />
+		<field name="interviewName" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.JobOpeningStatus">
+		<field name="uuid" type="String" />
+		<field name="jobStatusId" type="long" />
+		<field name="jobOpeningStatus" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.JobType">
+		<field name="uuid" type="String" />
+		<field name="jobTypeId" type="long" />
+		<field name="jobType" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.MainTable">
+		<field name="uuid" type="String" />
+		<field name="categoryId" type="long" />
+		<field name="category" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.NamePrefix">
+		<field name="uuid" type="String" />
+		<field name="namePrefixId" type="long" />
+		<field name="namePrefix" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.Priority">
+		<field name="uuid" type="String" />
+		<field name="priorityId" type="long" />
+		<field name="priorityName" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.ProjectStatus">
+		<field name="uuid" type="String" />
+		<field name="projectStatusId" type="long" />
+		<field name="projectStatus" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.SalaryRange">
+		<field name="uuid" type="String" />
+		<field name="salaryRangeId" type="long" />
+		<field name="salaryRange" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.SalesStage">
+		<field name="uuid" type="String" />
+		<field name="salesStageId" type="long" />
+		<field name="salesStage" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.SkillSet">
+		<field name="uuid" type="String" />
+		<field name="skillSetId" type="long" />
+		<field name="skillCategory" type="String" />
+		<field name="skillCategoryTools" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.SourceBy">
+		<field name="uuid" type="String" />
+		<field name="sourceId" type="long" />
+		<field name="sourceBy" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.WorkExperience">
+		<field name="uuid" type="String" />
+		<field name="workExpId" type="long" />
+		<field name="workExpRange" type="String" />
+	</model>
+	<model name="com.prime.data.service.model.WorkType">
+		<field name="uuid" type="String" />
+		<field name="workTypeId" type="long" />
+		<field name="workTypeName" type="String" />
+	</model>
+</model-hints>

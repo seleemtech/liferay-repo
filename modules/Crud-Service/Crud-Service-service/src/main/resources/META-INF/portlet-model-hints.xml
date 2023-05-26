@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.crud.service.model.Crud">
+		<field name="uuid" type="String" />
+		<field name="crudId" type="long" />
+		<field name="crudNo" type="long" />
+		<field name="crudName" type="String" />
+	</model>
+</model-hints>

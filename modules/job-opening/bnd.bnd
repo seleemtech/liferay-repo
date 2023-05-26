@@ -1,0 +1,4 @@
+Bundle-Name: job-opening
+Bundle-SymbolicName: com.job.opening
+Bundle-Version: 1.0.0
+Export-Package: com.job.opening.constants

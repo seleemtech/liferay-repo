@@ -1,0 +1,10 @@
+Bundle-Name: Docter-api
+Bundle-SymbolicName: com.docter.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.docter.service.exception,\
+	com.docter.service.model,\
+	com.docter.service.service,\
+	com.docter.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Docter-service/service.xml

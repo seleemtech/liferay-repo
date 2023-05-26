@@ -1,0 +1,1 @@
+create index IX_2AF430DF on FOO_Fitness (uuid_[$COLUMN_LENGTH:75$]);

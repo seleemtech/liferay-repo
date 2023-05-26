@@ -1,0 +1,12 @@
+dependencies {
+	compile project(":modules:onestop-services:onestop-services-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.0'
+}
+
+buildService {
+	apiDir = "../onestop-services-api/src/main/java"
+}
+
+group = "com.att.hr.onestop.services"

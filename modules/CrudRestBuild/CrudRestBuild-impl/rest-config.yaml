@@ -1,0 +1,9 @@
+apiDir: "../CrudRestBuild-api/src/main/java"
+apiPackagePath: "CrudRestBuild"
+application:
+    baseURI: "/CrudRestBuild"
+    className: "CrudRestBuildApplication"
+    name: "CrudRestBuild"
+author: "DELL"
+clientDir: "../CrudRestBuild-client/src/main/java"
+testDir: "../CrudRestBuild-test/src/testIntegration/java"

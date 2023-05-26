@@ -1,0 +1,10 @@
+Bundle-Name: interview-info-service-api
+Bundle-SymbolicName: com.interview.info.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.interview.info.exception,\
+	com.interview.info.model,\
+	com.interview.info.service,\
+	com.interview.info.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../interview-info-service-service/service.xml

@@ -1,0 +1,30 @@
+#wrapper{
+padding:0;
+}
+
+#banner{
+background:#313949;
+color:white;
+position: relative;
+}
+#nav_li{
+display:flex;
+list-style:none;
+}
+#nav_li li{
+padding:0 10px;
+}
+#nav_li li a{
+color:white;
+text-decoration:none;
+}
+.child-menu{
+
+  display: none;
+
+}
+#nav_li li:hover > .child-menu {
+display:block;
+list-style:none;
+padding :0;
+}

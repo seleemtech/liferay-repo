@@ -1,0 +1,4 @@
+Bundle-Name: Demo-web
+Bundle-SymbolicName: com.demo.web
+Bundle-Version: 1.0.0
+Export-Package: com.demo.web.constants

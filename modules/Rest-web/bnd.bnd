@@ -1,0 +1,7 @@
+Bundle-Name: Rest-web
+Bundle-SymbolicName: Rest.web
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
+-privatepackage: \
+	Rest.get.model,\
+	Rest.get.service

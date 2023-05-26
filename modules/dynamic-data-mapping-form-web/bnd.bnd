@@ -1,0 +1,5 @@
+Bundle-Name: Liferay Dynamic Data Custom Form Web
+Bundle-SymbolicName: com.liferay.dynamic.data.mapping.form.web.custom
+Bundle-Version: 4.0.103
+Web-ContextPath: /dynamic-data-mapping-form-web
+-dsannotations-options: inherit

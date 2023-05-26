@@ -1,0 +1,4 @@
+Bundle-Name: prime-data-web
+Bundle-SymbolicName: com.prime.data.web
+Bundle-Version: 1.0.0
+Export-Package: com.prime.data.web.constants

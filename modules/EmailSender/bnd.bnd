@@ -1,0 +1,4 @@
+Bundle-Name: EmailSender
+Bundle-SymbolicName: com.emailsender
+Bundle-Version: 1.0.0
+Export-Package: com.emailsender.constants

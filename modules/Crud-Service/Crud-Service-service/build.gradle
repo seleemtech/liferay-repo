@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:Crud-Service:Crud-Service-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../Crud-Service-api/src/main/java"
+}
+
+group = "com.crud.service"

@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:Intranet:Intranet-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../Intranet-api/src/main/java"
+}
+
+group = "com.intranet"

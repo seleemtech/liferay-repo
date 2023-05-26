@@ -1,0 +1,4 @@
+Bundle-Name: Docter-web
+Bundle-SymbolicName: com.docter.web
+Bundle-Version: 1.0.0
+Export-Package: com.docter.web.constants

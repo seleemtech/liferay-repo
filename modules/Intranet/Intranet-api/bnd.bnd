@@ -1,0 +1,10 @@
+Bundle-Name: Intranet-api
+Bundle-SymbolicName: com.intranet.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.intranet.exception,\
+	com.intranet.model,\
+	com.intranet.service,\
+	com.intranet.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Intranet-service/service.xml

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.exportdb.service.model.Student">
+		<field name="sid" type="long" />
+		<field name="sname" type="String" />
+	</model>
+</model-hints>

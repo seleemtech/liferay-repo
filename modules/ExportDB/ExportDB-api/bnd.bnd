@@ -1,0 +1,10 @@
+Bundle-Name: ExportDB-api
+Bundle-SymbolicName: com.exportdb.service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.exportdb.service.exception,\
+	com.exportdb.service.model,\
+	com.exportdb.service.service,\
+	com.exportdb.service.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../ExportDB-service/service.xml

@@ -1,0 +1,4 @@
+Bundle-Name: ParseData
+Bundle-SymbolicName: ParseData
+Bundle-Version: 1.0.0
+Export-Package: ParseData.constants

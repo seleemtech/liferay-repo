@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:RegistrationForm:RegistrationForm-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../RegistrationForm-api/src/main/java"
+}
+
+group = "com.rigistration.service"

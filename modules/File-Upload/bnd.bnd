@@ -1,0 +1,4 @@
+Bundle-Name: File-Upload
+Bundle-SymbolicName: com.file
+Bundle-Version: 1.0.0
+Export-Package: com.file.constants

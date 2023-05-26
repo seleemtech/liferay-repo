@@ -1,0 +1,4 @@
+Bundle-Name: interview-info-web
+Bundle-SymbolicName: com.interview.info.web
+Bundle-Version: 1.0.0
+Export-Package: com.interview.info.web.constants

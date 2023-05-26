@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.fitness.club.service.model.Fitness">
+		<field name="uuid" type="String" />
+		<field name="trainerId" type="long" />
+		<field name="trainerName" type="String" />
+		<field name="gender" type="String" />
+		<field name="age" type="long" />
+		<field name="experiance" type="long" />
+		<field name="Type" type="String" />
+		<field name="conNumber" type="long" />
+		<field name="image" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.prime.data.service.model.CandidateStatus" />
+	<import class="com.prime.data.service.model.CurrJobTitle" />
+	<import class="com.prime.data.service.model.DocumentMapper" />
+	<import class="com.prime.data.service.model.HighQualHeld" />
+	<import class="com.prime.data.service.model.Industry" />
+	<import class="com.prime.data.service.model.InterviewName" />
+	<import class="com.prime.data.service.model.JobOpeningStatus" />
+	<import class="com.prime.data.service.model.JobType" />
+	<import class="com.prime.data.service.model.MainTable" />
+	<import class="com.prime.data.service.model.NamePrefix" />
+	<import class="com.prime.data.service.model.Priority" />
+	<import class="com.prime.data.service.model.ProjectStatus" />
+	<import class="com.prime.data.service.model.SalaryRange" />
+	<import class="com.prime.data.service.model.SalesStage" />
+	<import class="com.prime.data.service.model.SkillSet" />
+	<import class="com.prime.data.service.model.SourceBy" />
+	<import class="com.prime.data.service.model.WorkExperience" />
+	<import class="com.prime.data.service.model.WorkType" />
+	<class name="com.prime.data.service.model.impl.CandidateStatusImpl" table="PRIME_CandidateStatus">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="candidateStatusId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="candidateStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.CurrJobTitleImpl" table="PRIME_CurrJobTitle">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="currJobTitleId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="currentJobTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.DocumentMapperImpl" table="PRIME_DocumentMapper">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="recordId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="moduleName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="classPk" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="documentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="documentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="createdDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.HighQualHeldImpl" table="PRIME_HighQualHeld">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="highQualHeldId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="highQualHeld" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.IndustryImpl" table="PRIME_Industry">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="industryId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="industryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.InterviewNameImpl" table="PRIME_InterviewName">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="interviewNameId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="interviewName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.JobOpeningStatusImpl" table="PRIME_JobOpeningStatus">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="jobStatusId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="jobOpeningStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.JobTypeImpl" table="PRIME_JobType">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="jobTypeId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="jobType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.MainTableImpl" table="PRIME_MainTable">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="categoryId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.NamePrefixImpl" table="PRIME_NamePrefix">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="namePrefixId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="namePrefix" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.PriorityImpl" table="PRIME_Priority">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="priorityId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="priorityName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.ProjectStatusImpl" table="PRIME_ProjectStatus">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="projectStatusId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="projectStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.SalaryRangeImpl" table="PRIME_SalaryRange">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="salaryRangeId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="salaryRange" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.SalesStageImpl" table="PRIME_SalesStage">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="salesStageId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="salesStage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.SkillSetImpl" table="PRIME_SkillSet">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="skillSetId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="skillCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="skillCategoryTools" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.SourceByImpl" table="PRIME_SourceBy">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="sourceId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="sourceBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.WorkExperienceImpl" table="PRIME_WorkExperience">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="workExpId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="workExpRange" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.prime.data.service.model.impl.WorkTypeImpl" table="PRIME_WorkType">
+		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="workTypeId" type="long">
+			<generator class="increment" />
+		</id>
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="workTypeName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.interview.info.model.InterviewInfo">
+		<field name="uuid" type="String" />
+		<field name="interviewId" type="long" />
+		<field name="interviewName" type="String" />
+		<field name="postingTitleId" type="long" />
+		<field name="candidateId" type="long" />
+		<field name="clientId" type="long" />
+		<field name="interviewFrom" type="long" />
+		<field name="interviewTo" type="long" />
+		<field name="interviewers" type="String" />
+		<field name="interviewOwner" type="long" />
+		<field name="scheduleComments" type="String" />
+		<field name="location" type="String" />
+		<field name="attachmentId" type="long" />
+		<field name="createdBy" type="long" />
+		<field name="createdDate" type="long" />
+		<field name="modifiedBy" type="long" />
+		<field name="modifiedDate" type="long" />
+	</model>
+</model-hints>

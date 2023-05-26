@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.att.hr.onestop.services.model.NewsEntry">
+		<field name="newsEntryId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="newsTitle" type="String" />
+		<field name="newsSummary" type="String" />
+		<field name="newsContent" type="String" />
+		<field name="newsImageId" type="long" />
+		<field name="newsScopeId" type="long" />
+		<field name="archive" type="boolean" />
+		<field name="allowedInDashBoard" type="boolean" />
+		<field name="expireDate" type="Date" />
+		<field name="ToEmail" type="String" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+	</model>
+</model-hints>
