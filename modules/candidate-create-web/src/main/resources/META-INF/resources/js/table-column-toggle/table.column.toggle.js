@@ -6,6 +6,9 @@ $(document).ready(function() {
         $(this).siblings(".columnEdit").toggle();
         console.log("Clicked");
     });
+    $('.closeColumnsBtn').click(function() {
+    	 $(".columnEdit").hide();
+    });
 
     $('.toggleColumnsBtn').on('click', function() {
         var tableContainer = $(this).closest('.tableContainer');
@@ -46,4 +49,16 @@ $(document).ready(function() {
         tableContainer.find('.columnEdit')
             .hide();
     });
+    
+    $('#setupsearch').on('input', function() {
+    	var searchTerm = $(this).val().toLowerCase();
+    	$('label.toggle-checkbox').each(function() {
+    	var labelText = $(this).text().toLowerCase();
+    	if (labelText.indexOf(searchTerm) !== -1) {
+    	  $(this).show();
+    	} else {
+    	  $(this).hide();
+    	}
+    	});
+    	});
 });

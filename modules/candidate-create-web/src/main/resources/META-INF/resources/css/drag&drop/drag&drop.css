@@ -86,3 +86,113 @@ th[draggable] a:hover, th[draggable] a {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+
+
+
+
+.tableContainer{
+  position: relative;
+
+}
+
+
+.columnEdit {
+  display: none;
+  position: absolute;
+  background-color:white;
+  padding :5px 0px;
+  min-width: 225px;
+  max-height:380px;
+   overflow:hidden;
+  z-index: 1;
+      min-height: 0px;
+    
+        
+            border: 1px solid rgb(229, 229, 229) !Important;
+    border-top: 0 solid rgb(229, 229, 229) !Important;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.columnEdit .columnEdit-content{
+    min-height: 0px !important;
+    height: auto !important;
+    max-height: 280px !important;
+    padding-left: 10px !important;
+    overflow: auto;
+    margin-top: 5px;
+}
+
+
+.columnEdit label{
+font-size:12px;
+  display: block;
+}
+
+.search-div #setupsearch {
+   width: 100%;
+    height: 36px;
+    font-size: 14px;
+    padding: 8px 10px 8px 30px;
+    border: none;
+    border-bottom: 1px solid #eee!important;
+    color: #333;
+
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: .3s all ease;
+}
+
+.columnListBtn{
+padding: 10px 0px 10px;
+    text-align: center;
+    border-top: 1px #ddd solid;
+    }
+    
+    .columnListBtn .saveBtn {
+color: white !important;
+    border-radius: 6px !important;
+    border: 0!important;
+    box-shadow: 0 -2px 0 0 #0061ca inset!important;
+    background: transparent linear-gradient(0deg,#0279ff,#00a3f3) 0 0 no-repeat padding-box!important;
+    padding: 8px 20px 9px!important;
+    min-width: 31px;	
+    cursor:pointer;
+    font-size: 0.9rem;
+    padding: 7.5px 15px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-font-smoothing: auto;
+    font-family: sans-serif;
+    background: transparent;
+    outline: none;
+    line-height: 1.125rem;
+
+
+}
+.columnListBtn .cancelBtn {
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 7.5px 15px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-font-smoothing: auto;
+    font-family: sans-serif;
+ 
+    line-height: 1.125rem;
+    min-width: 31px;
+    border: 1px solid #d0d4df!important;
+    padding: 7px 20px 8px;
+    color: #222833!important;
+    box-shadow: 0 -1px 0 0 #d0d4df inset!important;
+    background: transparent linear-gradient(#fcfdff,#eaeef5) 0 0 no-repeat padding-box!important;
+    cursor:pointer;
+    }
+    

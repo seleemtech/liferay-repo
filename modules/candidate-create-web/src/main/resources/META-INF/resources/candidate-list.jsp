@@ -657,61 +657,6 @@
 
 
 		<div class="tableContainer">
-			<button class="showHeaderBtns">Edit Column</button>
-			<div class="columnEdit">
-				<label> <input type="checkbox" class="header-checkbox"
-					data-column="Candidate ID" checked disabled> Candidate ID
-				</label> <label> <input type="checkbox" class="header-checkbox"
-					data-column="Candidate Name" checked disabled> Candidate
-					Name
-				</label> <label> <input type="checkbox" class="header-checkbox"
-					data-column="Last Name" checked disabled> Last Name
-				</label> <label> <input type="checkbox" class="header-checkbox"
-					data-column="Candidate Stage" checked disabled> Candidate
-					Stage
-				</label> <label> <input type="checkbox" class="header-checkbox"
-					data-column="Status"> Status
-				</label>
-				</label>
-				 <label> <input type="checkbox" class="header-checkbox" data-column="Email">Email</label>				
-				<label> <input type="checkbox" class="header-checkbox" data-column="Skill Set">Skill Set</label>	
-				<label> <input type="checkbox" class="header-checkbox" data-column="Secondary Email">Secondary Email</label>
-				<label> <input type="checkbox" class="header-checkbox" data-column="Additional Info">Additional Info</label>
-				<label> <input type="checkbox" class="header-checkbox"
-					data-column="Candidate owner"> Candidate owner
-				</label>
-				
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="City"> City
-				</label> 
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="Country"> Country
-				</label> 
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="Current Employer"> Current Employer
-				</label> 
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="Current Job Title"> Current Job Title
-				</label> 
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="Highest Qualification Held"> Highest Qualification Held
-				</label> 
-				 <label> <input type="checkbox" class="header-checkbox"
-					data-column="Mobile"> Mobile
-				</label> 
-				
-				
-				<label> <input type="checkbox" class="header-checkbox"
-					data-column="Source"> Source
-				</label>  <label> <input type="checkbox" class="header-checkbox"
-					data-column="Actions"> Actions
-				</label>
-				 <label> <input type="checkbox" class="header-checkbox" data-column="State">State/Province</label>
-				  <label> <input type="checkbox" class="header-checkbox" data-column="Street">Street</label>
-				   <label> <input type="checkbox" class="header-checkbox" data-column="Website">Website</label>
-				    <label> <input type="checkbox" class="header-checkbox" data-column="ZipCode">Zip/Postal Code</label>
-				<button class="toggleColumnsBtn">Add Column</button>
-			</div>
 
 			<table class="table myTable table-bordered table-hover"
 				id="candidateTable">
@@ -719,17 +664,74 @@
 					<tr class="dnd-moved table-row">
 					<th style="width:41px"><span class="add-column showHeaderBtn" data-hover="Add Column">
   <img src="<%=request.getContextPath() %>/img/table-plus.png" alt="Add Column" />
-</span></th>
-						<th>Candidate ID</th>
-						<th>Candidate Name</th>
-						<th>Last Name</th>
-						<th>Candidate Stage</th>
-						<th class="table-column-none">Status</th>
-						<th class="table-column-none">Email</th>
+</span>  	<div class="columnEdit">
+<div class="search-div" ><input type="text" id="setupsearch" placeholder="Search "></div>
+<div class="columnEdit-content">
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Candidate ID" checked disabled> Candidate ID
+				</label> <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Candidate Name" checked disabled> Candidate
+					Name
+				</label> <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Last Name" checked disabled> Last Name
+				</label> <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Candidate Stage" checked disabled> Candidate
+					Stage
+				</label> <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Status"> Status
+				</label>
+				</label>
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Email"> Email</label>				
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Skill Set"> Skill Set</label>	
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Secondary Email"> Secondary Email</label>
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Additional Info"> Additional Info</label>
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Candidate owner"> Candidate owner
+				</label>
+				
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="City"> City
+				</label> 
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Country"> Country
+				</label> 
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Current Employer"> Current Employer
+				</label> 
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Current Job Title"> Current Job Title
+				</label> 
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Highest Qualification Held"> Highest Qualification Held
+				</label> 
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Mobile"> Mobile
+				</label> 
+				
+				
+				<label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox"
+					data-column="Source"> Source
+				</label>  <label> <input type="checkbox" class="header-checkbox"
+					data-column="Actions"> Actions
+				</label>
+				 <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="State"> State/Province</label>
+				  <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Street"> Street</label>
+				   <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="Website"> Website</label>
+				    <label class="toggle-checkbox"> <input type="checkbox" class="header-checkbox" data-column="ZipCode"> Zip/Postal Code</label>
+				
+				</div>
+				<div class="columnListBtn" ><button class="cancelBtn closeColumnsBtn">Cancel</button><button class="saveBtn toggleColumnsBtn" >Save</button></div>
+			</div></th>
+						<th class="headerColumn">Candidate ID</th>
+						<th class="headerColumn">Candidate Name</th>
+						<th class="headerColumn">Last Name</th>
+						<th class="headerColumn"> Candidate Stage</th>
+						<th class="table-column-none headerColumn">Status</th>
+						<th class="table-column-none headerColumn">Email</th>
 						
-						<th class="table-column-none">Skill Set</th>
-						<th class="table-column-none">Secondary Email</th>
-						<th class="table-column-none">Additional Info</th>
+						<th class="table-column-none headerColumn" >Skill Set</th>
+						<th class="table-column-none headerColumn">Secondary Email</th>
+						<th class="table-column-none headerColumn">Additional Info</th>
 						<th class="table-column-none">Candidate owner</th>
 						<th class="table-column-none">City</th>
 						<th class="table-column-none">Country</th>
@@ -822,7 +824,6 @@
 </div>
  <style>
 
-
 </style>
 <script>
 	$('.table').dragableColumns({
@@ -832,7 +833,7 @@
 		movedContainerSelector : '.dnd-moved'
 	});
 </script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/js/table-column-toggle/table.column.toggle.js?v=125"></script> 
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/table-column-toggle/table.column.toggle.js?v=126"></script> 
 <script type="text/javascript" src="<%= request.getContextPath() %>/js/filters/8.dropdown.filters.js?v=28">
 </script> 
  
