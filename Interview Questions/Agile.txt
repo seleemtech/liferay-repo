@@ -1,0 +1,85 @@
+Test management tools
+bug tracking tools
+
+
+
+Agile Tools
+Agile is an iterative and incremental Processs.
+
+iterative means desing and coding testing repeating again and again
+
+incremental means we keep on adding new module or new future to exiting software
+
+agile principles
+--------------
+1) Customer no need to wait for long time.
+2)We develop, test and release peice of software to the customer few number of features.
+3)we can accept/accomodate requiretment changes.
+
+There will be good communication b/w customer,Business Analyst,Developer and testers.
+
+jira is a agile project management tool.
+
+Agile scrum activities 
+---------------------- 
+how to create project in jira
+how to add users
+
+
+issue types
+------
+epic
+task
+story
+bug
+
+Real workflow start here
+
+Backlog--->Epic-->Stories
+Create spint--->add stories to the sprint--->start sprint---->add task for every story
+---------------------------------------------------------------------------------------------------
+
+Difference b/w agile and scrum
+
+Agile is a kind of process with some principles.To follow the principles we have scrum framework.
+
+Scrum
+------
+Scrum is a framework through which we build software product by following agile principles.
+
+scrum include group of people is called scrum team.normally contains 5-9 members.
+
+1) Product Owner  ->Define the Functianality of the product.
+2) Scrum Master  -->The main role is facilitating and driving the agile process.
+3) Dev Team
+4) QA Team
+
+scrum terminolog
+------------------
+user story  : A feature/module in a software.
+Epic : collection of user stories.
+Product backlog: Contain list of user stories. Prepared by product owner.
+Sprint/Iteration : Period of time to complete the user stories.decided by the product owner and team.
+ sprint planning meeting: meeting conducts with the team to define what can be delivered in the sprint and duration.
+sprint backlog: list of commited stories by Dev/QA for specific sprint.
+
+Scrum meating
+-------
+Meating conducted by Scrum master everyday 15min. called as standup meating.
+     what did you do yesterday?
+     what will you do today?
+     Are there any impediments in your way?.
+
+
+sprint retrospective meeting:
+----------------
+conducts meeting after completion  of sprint.It happens only one time.
+
+story point: Rough estimation of user stories,will be  given by dev &QA in the form of fibonacci series.
+
+0 1 1 2
+1 story point = 1hour/1 day
+
+burdown chart:
+Shows how much work remaining in the sprint. It maintained by the scrum master.
+

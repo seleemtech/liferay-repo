@@ -1,0 +1,16 @@
+What is restApi
+
+rest api is an application programming  interface 
+that confirmsto the contraints rest archituctural style and allow for interact with restfull webservices.
+
+what is graphQl
+GraphQl is a query language and server side runtime.
+GraphQl is a query language for querying data.you don't use graphql to query a particular type of data store(such as mysql db)
+instead , you use graphql to query data from any number of different sources.
+
+
+GraphQl
+---------
+Two types of request
+1) Query
+2) Mutation

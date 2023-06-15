@@ -1,0 +1,143 @@
+java :
+> platform independent it is based on the concept of write once run anywhere
+> java can both compiled n=& interpreter
+
+C++
+> c++ have only compiler cannot be interpreter
+> platform dependent it is based on the concept of write once run anywhere
+
+----------------------------------------------------------------------------------
+variable
+varaible contains which holds the value.
+eg: int x=1000;
+----------------
+local variable
+A variable inside the body of the method
+-------------------------
+instance variable
+A variable declared inside the class but outside the method.
+-----------------
+Static variable
+A static variable i declared as a static it cannot be changed.
+-------------------------------------------------------------------------------------
+class
+Class is a collection of variables and methods.
+
+eg:
+public class className
+{
+psvm{
+code//
+}
+}
+
+-------------------------------------------------------------------------------------
+Data Types
+Means what kind of data are stored in variable that decides datatypes
+
+Primitive Data types
+1.int
+2.double
+3.char
+4.boolean
+5.short
+6.float
+
+Derived Data type
+1.Array
+2.ArrayList
+3.String
+4.HashMap.....
+
+----------------------------------------------------------------------------------------
+
+Operator
+operator will perform certain operation b/w two operand
+
+1.arithmatic (+,-,*,/,%)
+2.Relatinal (==,<>,<=,>=,!=)
+3.Logical (&&,||,!)
+4.Inc/Dec (++, --)
+5.Assignment (=)
+----------------------------------------------------------------------------------------
+
+Control Statement
+----------------
+
+1.Conditional Statement
+
+a) if                    b) if else               c)Nested if else
+
+if(condition){             if(condition){            if(condition){
+statement....                 statement....             statement....
+}                            }                        }
+                            else{                    else if(condition 2){
+                                 statement....             statement....
+                             }                        }
+                                                       statement...
+                                                      }
+
+
+Swich case  (used to compare the value on stored in a variable and execute the 
+               block of statement associated with matches case)
+
+switch(expression){
+case 1: statement....;
+break;
+case 2: statement....;
+break;
+case 3: statement....;
+break;
+default : statement...;
+}
+
+------------------------------
+
+2.Looping Statement
+  It is a set of statements can be repeated multiple times based on condition.
+ 
+a)While Loop                        b)do while                              c)For loop
+                                                                              
+while(condition){                    do{                                      for(initialized;condition;inc/dec)
+statement........                    statement......
+}                                   }while(condition)
+
+
+1)it might occure stement is        1)it at least once the statement is       It is entry-controlled loop that a user                                
+executed zero times if condition      executed.                               uer  execute a block of statemnt iteratiuly 
+false.                                                                        for a fixed number of times.
+2)Entry control loop                2)Exit controll loop
+3)no semicolon                      3)required semicolon.
+
+
+(while(isnext())->isnext is useto check if 
+there is next record is there or not. 
+
+------------------------------------------------------------------------------------------------
+
+3.Jump Statement
+
+break;                                      Continue;
+-----                                       ---------
+break command is use to exiit the current    Continue statement is used to skip the next 
+statement.                                   iteration of the loop.
+
+--------------------------------------------------------------------------------------------    
+--------------------------------------------------------------------------------------------------------------------
+
+Arrays
+-------
+array is a collection of element of the same data type.
+
+limitation:
+----------
+1. Array size is fixed
+2.We can store only same data type of elements.
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+Internet:worldwide system of computer networks
+localhost:accessing locally webpage from local server comes from default ipaddress 127.0.0.1
+server:is a remote device to send a response to the client
+virtual server:re creates the functionality of the physical server
+client:browser is the client.
+session: is a state consisting of several requests and response between the client and the server.
+         server provides the session and it is a server side file that transforms the user information.
+cookies:is a client side file that holds the small amount of user information.
+liferay:open source java framework.
+control panel:enables a user to change various features.
+css:cascading style sheet and scss:syntactically Awesome style sheet contains all features of css and its a advanced version gives variables
+     using this we can shorten our codes.
+hooks and ext:hooks used to customise the portal  and ext used to customise and extend the portal and it creates
+  the additional webapp folder while we upgrade it separates the out-of-box and customise code.
+guest: unauthonticated user.
+user:a person who uses or operates something
+user group:list of users created for specific purpose.we can assign roles and permissions to a group of users that don't share an Organization.
+power user:more priveleged user and has same user role but he has personal sites.
+site:A site contains a set of pages that can be used to publish content or applications.
+organization:as same as site but it can used to only group the people and manage them. 
+In the organization users only can be members. In the organization we can create users and assign users to specific organization by admin
+company:a legal entity formed by a group of individuals to engage in and operate a business
+role: collection of permissions.
+team: group of people working to achieve a same goal.
+theme:overall look and feel for a site.
+interface:mechanism to achieve abstraction and also a blueprint of class.
+session:server side file that contains user data unlimited data can be stored
+cookies:client side file that holds user information limited.
+adt:Application display template define custom display templates used to render widgets
+asset:The asset framework powers the core Liferay features
+solr:Solr is a popular enterprise search platform 
+elasticsearch: Elasticsearch is an open source, highly scalable, full-text search and analytics engine
+class:group of objects which have common properties.
+soap:simple object access protocol and it is a packaging protocol.
+http:transport protocol.
+rest: Representational state transfer (REST) is a software architectural style that describes a uniform interface between decoupled 
+components in the Internet in a Client-Server architecture
+streamAPi: the Stream API is used to process collections of objects
+ssh :Secure Shell is a network communications protocol for remote login/control of a machine
+web service: some method of accessing data via a web server
+encryption: the process of converting plain text to cyber text.
+functional interface:implement only one abstraction method.

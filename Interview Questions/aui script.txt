@@ -1,0 +1,166 @@
+What is AUI (Alloy UI)?
+
+Alloy UI is java scrip library 
+winch contains many java script function we can use this for fast implementation of application.
+
+AUI is inherited from YUI. We can say simple as less writing more work
+
+---------------------------------------------------------------------------
+
+What are most popular java scrip libraries in market?
+We have many java script libraries in market like jQuery, AUI, YUI, ExtJs, Dojo and Prototype.
+
+------------------------------------------------------------------------------------------------
+
+What is use of on demand java script loading?
+On demand java script avoid unnecessary loading of java script in page so that page loading will be fast.
+
+-------------------------------------------------------------------------------------------------
+What is relation between AUI and Liferay?
+
+AUI is a java scrip library which follows module based java script implementation.
+ Liferay have used AUI java scrip for entire liferay portal so that they have implemented as many modules.
+ Liferay also have custom modules these are enhanced from AUI script these modules used in only in liferay
+
+-----------------------------------------------------------------------------------------------------
+Loading AUI Script
+
+We will use two ways to load AUI script
+
+Using <script> tag and its use attribute
+<aui:script use="'aui-io-request,aui-base">
+<aui:script>
+---------------------------
+Using AUI ().use(--) Function
+AUI().use('aui-base','aui-io-request', function(A){
+// write all AUI scrip here then it will be loaded when page is loaded
+});
+
+-------------------------------------------------------------------------------------
+Getting value from text feild
+
+<aui:script>
+AUI().use('aui-base','aui-io-request', function(A){
+var inputValue=A.one('#inputTextBoxId').get('value');
+});
+<aui:script>
+--------------------------
+Example
+
+<aui:input name="articleId" type="text" value="" />
+<aui:script>
+AUI().use('aui-base','aui-io-request', function(A){
+var inputValue=A.one('#<portlet:namespace/>articleId).get('value');
+});
+<aui:script>
+
+Note:
+We already know aui input tag appended with portlet name space.
+
+--------------------------------------------------------------------------------------
+Get Attribute Values for elements
+
+var attributeValue= A.one("#elementId").get(“AttributeName”);
+
+<aui:input type="text" name=" Name " id=" Name " value=""></aui:input>
+<aui:script>
+AUI().use('aui-base',function(A){
+ var inputTextBoxValue = A.one("#<portlet:namespace/>Name").get(“value”);
+});
+</aui:script>
+
+------------------------------------------------------------------------------------------
+AUI each method
+We have AUI each method like for we will use this each method to read all elements
+
+<aui:input type="text" name="firstName" id="firstName" value=""></aui:input>
+<aui:input type="text" name="lastName" id="lastName" value=""></aui:input>
+<aui:input type="text" name="mddileName" id="middleName" value=""></aui:input>
+<aui:script>
+AUI().use('aui-base',function(A){
+ A.all('input[type=text]').each(function(object) {
+    alert(object.get("value"));
+  });
+});
+
+-------------------------------------------------------------------------------------------
+Iterate Array using AUI each
+
+<aui:script>
+AUI().use('aui-base',function(A){
+A.Array.each([1, 2, 3], fn(value, index){
+alert(value);
+alert(index));
+});
+});
+</aui:script>
+----------------------------------------------------------------------------------------------
+
+AUI Events
+
+// click even for click me button
+A.one("#<portlet:namespace/>ClickMe").on('click',function(){
+ alert("Hi you have performed Click Event and Thank You");
+})
+
+// on change  event for country select box
+A.one("#<portlet:namespace/>country").on('change',function(){
+ alert("Hi you have performed On change Event and Thank You");
+})
+
+//Mouse over Event
+A.one("#MouseOverMousOut").on('mouseover',function(){
+ alert("Hi you have performed Mouse Over Event and Thank You");
+})
+//Mouse Out Event
+A.one("#MouseOverMousOut").on('mouseout',function(){
+ alert("Hi you have performed Mouse Out Event and Thank You");
+})
+
+//configres multiple events for Name Text Box
+A.one("#<portlet:namespace/>Name").on(['click', 'focus', 'blur','keyup','keydown'],function(){
+ alert("Hi you have performed Multiple Events for Name Text Box and Thank You");
+})
+
+-------------------------------------------------------------------------------------------
+Select all elements which are only form elements
+<aui:script>
+AUI().use('aui-base',function(A){
+var allFormInputElementsArray=A.all('input,textarea,select,button')
+allFormInputElementsArray.each(function(object) {
+ alert(object.get("value"));
+});
+});
+</aui:script>
+-------------------------------------------------------------------------------------------
+Get first div element with specific css class
+
+A.one('div.myDiv')
+A.one('div.foo').hide();
+A.one('div.foo').show();
+-----------------------------------------------------------------------------------------------
+Insert HTML data to Element
+
+A.one('div.foo').setHTML(“<p>this is meera</p>”)
+
+OR
+A.one('div.foo').set(“innerHTML”,“<p>this is meera</p>”);
+
+--------------------------------------------------------------------------------------------
+Crete Element in AUI and Set Attributes
+
+<aui:script>
+AUI().use('aui-base','aui-node',function(A){
+var divElement=A.Node.create('<div/>');
+divElement.set("id","myDIvID");
+divElement.setStyle('display', 'block');
+divElement.addClass('myDivClass')
+});
+});
+</aui:script>
+
+----------------------------------------------------------------------------------------
+Add and Remove CSS classes to element
+
+A.one("#elementID").addClass('myclass')
+A.one("#elementID").removeClass('myclass')

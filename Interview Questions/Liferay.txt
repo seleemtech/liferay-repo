@@ -1,0 +1,48 @@
+Hibernate
+Its have some default class. for accessing database. 
+
+model-hints.xml
+we can customised our forms  input field based on these hints.
+
+------------------------------------------------------------------------
+staging
+you can modify your site behind the scenes and then publish all your updates in one shot.
+---------------------------------------------------------------------------------------------
+Portlet Filter
+---------------
+Portlet Filter is used to intercept and manipulate the request and response
+before it is delivered to the portlet at given life cycle such as action,render,reource.
+
+Types Of Filters For A Liferay Portlet
+Action Filter
+Render Filter
+Resource Filter
+Base Filter
+
+----------------------------------------------------------------------------------------------
+
+Servlet Filter
+
+Servlet filter provides a filter layer between the client and the servlet. When the client invokes the request, 
+at that time servlet filter will perform the pre-process steps to filter the request before completing the request,
+also it will perform the post-processing steps before sending it to the client.
+
+-----------------------------------------------------------------------------------------------------------
+
+Liferay Message Bus 
+Multiple senders will send messages on destination and other-end receivers listens the messages.
+
+
+Following are important building blocks of Message Bus
+
+Destination
+Senders
+Listeners
+--------------
+
+Liferay is providing the 3 types of destination
+
+Parallel Destination
+Serial Destination
+Synchronous Destination
+----------------------------

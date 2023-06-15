@@ -1,0 +1,145 @@
+what is jquery?
+> intriduced in the year 2006 by john resig.
+> jquery is a javascript library that says:write less,do more.
+> jquery is a open source and also compatible with almost all the modern browsers.
+
+-------------------------------------------
+jQuery selector
+
+1. Id selector          $("#p1,#p2").css('color','blue')
+2. element selector     $("div").css('background-color','orange')
+3. class selector       $(".param").css('color','orange')
+----------------------------------------------------------
+
+jQuery Events
+
+1.click()
+2.ready()
+3.dblclick()
+4.mouseenter()
+5.mouseleave()
+6.hover()
+
+------------------------------------------------------------
+jQuery Effects
+
+1.hide()
+2.show()
+3.toggle()
+4.fadeIn()
+5.fadeOut()
+6.fadeToggle()
+7.slideUp()
+8.slideDown()
+9.slideToggle()
+10.stop()
+
+------------------------------------------------------------
+jQuery methoods
+
+
+text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+
+$("#btn1").click(function(){
+  alert("Text: " + $("#test").text());
+});
+$("#btn2").click(function(){
+  alert("HTML: " + $("#test").html());
+});
+
+------------------------------
+val() - Sets or returns the value of form fields
+
+$("#btn1").click(function(){
+  alert("Value: " + $("#test").val());
+});
+-----------------------------
+attr() -The jQuery attr() method is used to get attribute values.
+
+$("button").click(function(){
+  alert($("#w3s").attr("href"));
+});
+
+--------------------------------------------------------------------
+
+jQuery - Set Content and Attributes
+
+we can also use callback function here.
+example
+
+$("#btn1").click(function(){
+  $("#test1").text(function(i, origText){
+    return "Old text: " + origText + " New text: Hello world!
+    (index: " + i + ")";
+  });
+});
+
+$("#btn2").click(function(){
+  $("#test2").html(function(i, origText){
+    return "Old html: " + origText + " New html: Hello <b>world!</b>
+    (index: " + i + ")";
+  });
+});
+------------------------------------
+
+text() - Sets or returns the text content of selected elements
+html() - Sets or returns the content of selected elements (including HTML markup)
+val() - Sets or returns the value of form fields
+
+$("#btn1").click(function(){
+  $("#test1").text("Hello world!");
+});
+$("#btn2").click(function(){
+  $("#test2").html("<b>Hello world!</b>");
+});
+$("#btn3").click(function(){
+  $("#test3").val("Dolly Duck");
+});
+
+Set Attributes - attr()
+
+$("button").click(function(){
+  $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+});
+
+-------------------------------------------------------------------------------
+
+AJAX -(Ashyncronys java script xml)
+
+Get method
+var $orders=$('#orders');
+  $.ajax({
+    type:'GET',
+    url:'http://restapi.adequateshop.com/api/Tourist?page=2',
+    success: function(datas){
+      $.each(datas,function(i,data){
+        $orders.append('<li>name:'+data.id+'no:'+data.tourist_email+'</li>');
+      });
+    }
+  });
+});
+
+-----------------------
+Post method
+
+$("#submitfunction").click(function () {
+    var submit = {
+      name: $name.val(),
+      date: $date.val(),
+    };
+    $.ajax({
+      type:'POST',
+      url:'http://restapi.adequateshop.com/api/Tourist?page=2',
+      data:submit,
+      success:function(dat){
+        $orders.append(
+          "<li>name:" + dat.name + "no:" + dat.date + "</li>"
+        );
+      }
+    })
+  });
+
+
+
+  

@@ -1,0 +1,185 @@
+1.what is css
+css means cascading style sheet
+it used to applying style for html elements
+-------------------------------------------------
+2.cascading means?
+it refers cascading order in html elemnts.
+it will sort the declared css in an order to avoid the conflicts.
+------------------------------------------------------------------
+3.type of css
+>Embedded - Adding the css styles in <style> attribute
+>inline- Adding the css to the Htnl elements
+>Linked/External -Adding the External css file to the html elemnts.
+
+-------------------------------------------------------------------
+4.Advantages of css?
+>page will load fast
+>maintenance is Easy
+>Offline Browsing
+
+-------------------------------------------------------------------
+
+5.Components of css styles ?
+>Property
+>Selector
+>Value
+------------------------------------------------------------------------------------------------------
+6.selector in css?
+>type selector ->type selector matches the elements of specific type. & to give the color to input txt
+>Universal Selector -> is used to style all html elements types.
+>descendant selector ->is used style to child elements eg ul li
+>id selector -> is used apply style to the elements based on the id of an elemnts,
+>classs selector -> " " "               '                    on the class of an elements diff means multiple elements have same class name
+>child selector -> used for applying the style for parent elements and this will descend to the child elements  eg: body>child{}
+----------------------------------------------------------------------------------
+
+7.how to use external style sheets?
+using link tag. the link tag we need write inside the head tag.
+
+-------------------------------------------------------------------------------------------
+
+8.which property will be used for changing the face of font ?
+font family property.
+----------------------------------------------------------------------------------------------
+9.How to use grouping in css?
+grouping mainly used for applying  css style for multiple html elemnts  eg: h2,h3
+-------------------------------------------------------------------------------------------
+
+10.float property
+is used to allow an html elements to positioned horizontally left or right.
+
+clear property:The clear property controls the flow next to floated elements.
+used clear elements when used with float property.
+--------------------------------------------------------------------------------
+
+11.Which property is used to control the position in the background image?
+background-position.
+---------------------------------------------------------------------------------
+
+12.list of meadia types in css?
+>all
+>screen
+>print
+>projection
+>Tv
+>Tty
+----------------------------------------------------------------------------
+13. list the font attributes
+>font-variant
+>font-family
+>font-size
+>font-style
+>font-weight
+---------------------------------------------------------------------------------
+14.list the elements of css box model?
+
+we can do rectangular boxes using
+
+>Border
+>margin
+>Content
+>Padding
+------------------------------------------------------------------------------
+15. z-index?
+is used to avoid the overlaping of the elements.
+
+----------------------------------------------------------------
+16.list 5 property of cursor
+
+>pointer
+>help
+>wait
+>hand
+>crosshair
+
+------------------------------------------------------------
+
+17. new properties in added in css3
+
+>border images
+>new web fonts
+>multi column layout
+>box shadow
+>text shadow
+>tranform property
+
+------------------------------------------------------------
+
+18.difference between inline and block
+block elements will leave space before and after the elements and full width avoilable <div> <h1>
+inline elementswill  take only the rquierd width for the contents eg: <span> <a>
+---------------------------------------------------------------------------------------------------------
+
+19.display:none and visibility:hidden?
+---------------------------------------------------------------------------------
+
+20.property used for formatting the texts in css?
+property white-space
+----------------------------------------------------------------------------------------
+
+21.how do you posisioned elements  in css?
+
+>static ->Default position
+>inherit
+>fixed
+>absolute
+>Relative
+-------------------------------------------------------------------------------------------
+22.which property is used for underlining the link in css?
+text-decoration.
+
+--------------------------------------------------------------------------------------------
+23 how to give line break using span in css?
+display:block can be used with span element to add a line break.
+
+------------------------------------------------------------------------------------------------
+24.which property can be used to aligning the text in the document?
+text-align center,left,right.
+---------------------------------------------------------------------------------------------------
+25.Pseudo elements in css?
+pseudo elements are used to add special effects to some selectors.
+identify with ':' eg: a:hover.
+---------------------------------------------------------------------------------------------------------
+26.how to give rounded corners in css3?
+border-raduis.
+------------------------------------------------------------------------------------
+
+28. list the property of rounded corners in css3?
+>border-radius
+>border-botttom-right-radius.
+>border-botttom-left-radius.
+>border-top-right-radius.
+>border-top-left-radius.
+----------------------------------------------------------------------------------
+
+29.what are the new background are added in css3?
+background-origin
+background-clip  defines how far the background should extend within an element.
+background-size
+
+------------------------------------------------------------------------------------------------
+30.mention the syntax for adding multiple background images in css3?
+background-image:url(test1.jpg),url(text2.gif)
+----------------------------------------------------------------------------------------
+
+31.what you mean by word wrapping in css3?
+word wrapping means breaking the long words in next line.
+eg: word-wrap:break-word;
+-----------------------------------------------------------------------------------------------
+
+32.how can we use transition effect in csss3?
+using two things we can create a transition effect
+>duration of effect
+>css property to be added for an effect.
+--------------------------------------------------------------------------------------
+
+33.list of property of transition ?
+>transition-delay
+>transition-property
+>transition-duration
+>transition-timing-function
+----------------------------------------------------------------------------------------
+
+34.opacity in css3?
+opasity is used to hide or show an elemnts in css3. value 0 means hide the elements
+and  value 1 means showing the elements.(transperency of the elements)

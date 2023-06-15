@@ -1,0 +1,315 @@
+what is React
+React is declarative,efficient and flexible javascript library for building user interface.
+declarative(means make your code more predictable and easier to debug)
+
+--------------------------------------------------------------------------------------------------
+1.React is a library
+2.Popularity Means-Facebook created by react.
+2.React used virtual Dom and one way binding. 
+  virtual Dom means-it Effect only  updated elemnets
+  one way binding-UI elements can't effect a component state.
+two way binding-if we modify the UI input, the model state will change, and vice versa.
+3.Type script can write java script XML. 
+-----------------------------------------------------------------------------------------------
+
+npm -node package manager (It is a defualt package of node js) (npm cache clean -force)
+nvm -node version manager ([nvm install lts ]   this command will be install latest verion) 
+                          ([nvm install 14.15.0 ] Using this command we can install specefic version)
+                          ([nvm use 14.15.0 ] using this command we can change default active node)
+                          ([nvm uninstall 14.15.0 ] using this command we can remove the unused versions)
+npx -node package executer(npx is not installed automatically you can install seprately)   (npm install -g npx)
+
+---------------------------------------------------------------------------------------------------------------
+npm start --port 3300 (using this command we can change localhost port number)
+
+nvm list   (it listed installed versions)
+
+----------------------------------------------------------------------------------------------------------------
+git commands
+--------
+This is for pushing project
+
+git add *
+git commit -m "sdas"
+git push
+git status
+---------------
+git pull
+---------------
+if conflict use this command
+git stash
+git stash pop
+---------------------------------------------------------------------------------------------------------
+Creating react app
+npx create-react-app ecart
+npx create-react-app ecart --template typescript
+npm run build (use to build the project.)
+npm start (using this command we can start the project)
+
+-----------------------------------------------------------------------------------------------------------------
+
+creat ionic app
+ionic start ecart
+
+Start ionic app
+ionic serve
+
+display mobile app
+ionic serve --lab
+-----------------------------------------------------------------------------------------------------------------
+Node modules
+blocks of encapsulated code that communicates with an external application on the basis of their related functionality
+---------------------------------------------------------------------------------------------------------------------
+what is jsx and tsx ?
+jsx
+JSX is a file syntax extension used by React, we can render component.we sholud use jsx file when rendering react comonent.
+tsx
+TSX is the TypeScript version of JSX, TypeScript is a superset of javascript we should use TypeScript for code stability and static typing.
+ts
+ts is a file extention of typescript.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+App.js vs Index.js
+
+App.js is our App component, whereas index.js is the "entry point" for our application.
+The index.js contains the logic for rendering our App component, “App” is what people tend to call the file which contains the main logic of another file,
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Package.json
+package.json is used to store the metadata associated with the project as well as to store the list of dependency packages. 
+
+dependency
+dependency is a library that a project needs to functions.
+
+list of dependency used in react
+1.react
+2.react-dom
+3.react-script
+
+Devdependency
+DevDependency are the packages a developer needs during development.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+what is purpose of react scripts
+react-scripts are simply scripts to run the build tools required to transform React JSX syntax into plain JavaScript programmatically
+---------
+what are the build tool needed to create react application ?
+Babel 
+WebPack
+(These build tools are required because React's JSX syntax is a language that the browser doesn't understand.)
+
+----------
+Babel 
+The main purpose of Babel is to make your code readable by older browsers.)
+-----------
+
+ESlint
+ESLint is a JavaScript linter that will scan your code.The library will warn you from the console if you have any errors.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Jest 
+Jest is a testing tool that allow us to write test scripts for our application without having to install another testing library.
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+PostCSS
+PostCSS is a JavaScript plugin to transform your CSS. 
+-------------------------------------------------------------------------------------------------------------------------------------------
+Webpack
+Webpack is a module bndler for JavaScript that puts everything needed by your application together.like it compresus the file  
+
+-------------------------------------------------------------------------------------------------------------------------
+
+npm build
+npm run build creates a build directory with a production build of our app.
+
+why we used build 
+to compress all files.
+-----------------------------------------------------------------------------------------------------------------------------------------
+keyclock ->authentication
+--------------------------------------------------------------------
+creating apk file
+ionic build
+ionic capacitor build android
+-----------------------------------------------------------------------
+
+import { IonReactRouter } from '@ionic/react-router';
+it is a plugin is use for routing b/w pages
+-------------------------------------------------------------------
+React Folder Structer
+map() ->It is used for reading a array or iterating the array.
+filter() ->It is used for sorting purpose and it return  value as array type.
+find() -> It is used to identify the unique value and retun value as object type.
+ionic folder structure
+Ionic form
+React-hook-form
+
+-----------------------------------------------------------------------------
+What is a React hook form?
+React Hook Form is a library that helps you validate forms in React.
+
+
+Creating the React-hook-form
+
+npm i react-hook-form --save
+
+-----------------------------------------------------------------------------
+server
+install->npm i
+start server-> npm run server
+
+
+axios 
+
+npm i axios
+
+--------------------------------------------------------------------------------
+
+life cycle of react
+
+
+1.Mounting
+Mounting means putting elements into the DOM.
+
+constructor()
+It is used initialize state value
+-------
+getDerivedStateFromProps()->
+method is called right before rendering the element(s) in the DOM.
+--------------
+
+render()
+The render() method is required, and is the method that actually outputs the HTML to the DOM.
+-------------
+
+componentDidMount()
+method is called after the component is rendered.
+-----------------
+
+
+2.Updating
+A component is updated whenever there is a change in the component's state or props.
+--------
+
+getDerivedStateFromProps()
+when updating a component first this method will be called.
+------------------------
+
+shouldComponentUpdate()
+In the shouldComponentUpdate() method you can return a Boolean value that 
+specifies whether React should continue with the rendering or not.
+-------------------------
+
+render()
+ it has to re-render the HTML to the DOM, with the new changes.
+----------------
+
+getSnapshotBeforeUpdate()
+In the getSnapshotBeforeUpdate() we have to access the state and props before update.
+means that even after the update, we can check what the values were before the update.
+---------------------------
+componentDidUpdate()
+The componentDidUpdate method is called after the component is updated in the DOM.
+-----------------------------
+
+3.UnMounting
+Removing component from dom.
+
+componentWillUnmount()
+The componentWillUnmount method is called when the component is about to be removed from the DOM.
+
+-------------------------------------------------------------------------------------------------
+ES6 features
+Arrow Function  ->    (Arrow functions allow us to write shorter function syntax )
+---------------
+
+Variables ->  (Before ES6 only one way our defining variable. 
+               now, with ES6 there are three ways of defining your variables: var, let, and const)
+               var -> function scoped.   let and const  -> block soped.
+---------------
+
+Array Methods -> (.map(),.filter(),.find())
+--------------
+
+Ternary operators-> The ternary operator is a simplified conditional operator like if / else.
+                     Syntax: condition ? <expression if true> : <expression if false>
+--------------------
+
+modules -> we can write a code in seperate file with the help of modules.using import and export.
+---------------
+
+destructuring -> means we can extract data from array and object and assign them to variables.
+------------------
+
+spread operator ->It used for concating two object or arrays,
+----------------------------------------------------------------------------------------
+
+Axios -> it is library.
+Axios makes it easy to send asynchronous HTTP requests to REST endpoints and perform CRUD operations.
+-------------------------------------------------------------------------------------------
+
+hooks
+Hooks allow function components to have access to state and other React features.
+
+useState
+The React useState is used to set the value or managing tha data inside the components.
+----------
+useEffect
+The useEffect Hook allows you to perform side effects in your components.
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+useEffect accepts two arguments. The second argument is optional.
+useEffect(<function>, <dependency>)
+---------------
+useContext
+useContext” hook is used to pass the data through the component tree without having pass props manually at every level. 
+Wrap child components in the Context Provider and supply the state value.
+--------------------------------------
+useReducer
+It is similar to useState.
+It is used for when our state becomes complex logic.
+It returns two value 1St value is current state and 2nd value is despatch method.
+----------------------------
+useRef
+The useRef Hook allows you to persist values between renders.
+It can be used to store a mutable value that does not cause a re-render when updated.
+It can be used to access a DOM element directly.
+
+----------------------------------
+useCallback and useMemo
+The useCallback and useMemo Hooks are similar. 
+The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.
+
+---------------------------------------------------------------------------------------------------------------------- 
+mutable
+means state can be changed after object is created.
+
+immutable
+means state cannot be changed once the object is created.
+-----------------------------------------------------------------------
+AOS animation 
+
+npm install --save aos@next
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+----------------------------------------------------------------------------------------------
+Events
+ Events usually represent some type of interaction between the user and the app.
+
+-------------------------------------------------------------------------------------------------
+
+lifecycle
+hooks
+
+task
+
+client side and server side one way binding
+
+
+
+
+
+Doubts
+
+ExploreContainer
+
+

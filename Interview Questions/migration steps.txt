@@ -1,0 +1,33 @@
+1) take dump folder and data folder
+2)verify the mysql connector jar
+3)create a new data base
+4)Import the backup in the new database
+5)Create a new file portal-setup-wizard. properties
+
+jdbc.default.driverClassName=com.mysql.jdbc.Driver
+jdbc.default.password=root
+jdbc.default.url=jdbc:mysql://localhost/esquareinfo
+jdbc.default.username=root
+
+6)Copy the doument library folder from 6.2
+
+7)Disable indexer:
+create file :-  com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config     inside (liferay home/osgi/configs)
+
+indexReadOnly="true" 
+
+8)Disable autoUpgade:
+create file :-  com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config     inside (liferay home/osgi/configs)
+
+autoUpgrade="false" 
+
+9) configure upgrade tools
+   a)app-server.properties (uncomment the tomcate server)
+   b)portal-upgrade-database.properties  ((uncomment the mysql db setup)
+   c)portal-upgrade-ext.properties (un comment and below line =====module.framework.base.dir=../../osgi)
+
+10) check the build number
+   select buildNumber  from release_ where servletContextName="portal"
+
+11)Run db_upgrade.bat
+   

@@ -1,0 +1,4 @@
+Bundle-Name: Stealthkart Commerce Beta Site Initializer
+Bundle-SymbolicName: com.stealthkart.commerce.beta.site.initializer
+Bundle-Version: 1.0.0
+Web-ContextPath: /stealthkart-beta-site-initializer
