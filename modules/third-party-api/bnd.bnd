@@ -1,0 +1,4 @@
+Bundle-Name: third-party-api
+Bundle-SymbolicName: third.party.api
+Bundle-Version: 1.0.0
+Export-Package: third.party.api.constants
