@@ -1,0 +1,18 @@
+java8 new features
+----------------------
+  2014 march 8th 
+
+class Testn{
+  
+public static int squarelt(int)
+return n*n;
+public static void main(Stringt[] args)
+
+System.out.pritln(" Square Of 4:"+squareIt(4) ) ;
+System.out.pritln(" Square Of 5:"+squareIt(5) ) ;
+}
+}
+
+
+  
+  
