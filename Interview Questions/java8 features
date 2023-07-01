@@ -2,10 +2,72 @@ java8 new features
 ----------------------
   2014 march 8th 
 
-class Testn{
+consine code 
+Enabling functional programing
+
+1. Lambda Expressions
+2. Functional Interface
+3. Default methods and static methods
+4. Predefined Functional Interfaces
+   Predicate
+   Function
+   Consumer
+   Supplier
+   etc
+5. Double Colon Operator ( ::)
+   method reference
+   Constructor reference
+6. Streams
+7. Date and Time API
+8. Optional class
+9. Nashron JavaScript Engine
+etc
+
+
+1.Lambda Expression
+--------------------
+the main objective of lambda expression is:
+ to bring the benifits of functional program into java
+
+what is lambda expression
+It is an anonymous function
+Nameless
+without return type
+without modifiers
+
+
+2. Functional Interface
+--------------------------
+it contains only one abstract method and we can write any number of defult and static mrthod it is called 
+
+note: if you want to invoke lambda expression you must write functional interface
+
+Comparable and comparator
+-------------------------
+comparable : default nature sorting order 
+             present in java.lang package
+             it contains compareTo() method.
+comparator: customized sorting order
+             present in java.util package
+             it contains compare() method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Test{
   
-public static int squarelt(int)
+public static int squarelt(int){
 return n*n;
+}
 public static void main(Stringt[] args)
 
 System.out.pritln(" Square Of 4:"+squareIt(4) ) ;
@@ -13,6 +75,20 @@ System.out.pritln(" Square Of 5:"+squareIt(5) ) ;
 }
 }
 
+after java 8 features there enabled functional programing
+
+
+class Test{
+  
+
+public static void main(Stringt[] args)
+Function<lnteger,lnteger> f=i->i*i;
+
+
+System.out.pritln(" Square Of 4:"+f. apply(4) ) ;
+System.out.pritln(" Square Of 5:"+f. apply(5) ) ; 
+}
+}
 
   
   
