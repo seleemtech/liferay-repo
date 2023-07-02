@@ -23,7 +23,7 @@ Enabling functional programing
 9. Nashron JavaScript Engine
 etc
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 1.Lambda Expression
 --------------------
 the main objective of lambda expression is:
@@ -35,12 +35,112 @@ Nameless
 without return type
 without modifiers
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 2. Functional Interface
 --------------------------
 it contains only one abstract method and we can write any number of defult and static mrthod it is called 
 
 note: if you want to invoke lambda expression you must write functional interface
+
+
+Anonymous Inner classes vs Lambda Expressions:
+-----------------------------------------------
+Thread t = new Thread();
+Thread t = new Thread()
+{
+------ this sysntax is called as Anonymous Inner classes
+}
+
+We are writing a class that extends Thread class
+
+Anonymous Inner class can extend a normal class
+Anonymous Inner class can extend an abstract class
+Anonymous Inner class implement an interface which contains any number of abstract methods
+
+Lambda Expression can implement an interface which contains a single abstract methods
+
+Anonymous Inner class != Lambda Expression
+Anonymous Inner class > Lambda Expression
+
+
+If anonymous Inner class implements an interface that contains single abstract method
+then only we can replace that anonymous inner class with lambda expressions
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Default methods and static methods
+-----------------------------------
+
+until 1.7V:
+------------
+Every method present inside interface is always:
+     void ml();
+     public void ml();
+     abstract void ml();
+     public abstract void ml();
+Related methods:
+1.8 V: default methods+static methods
+1.9 V: private methods
+
+Default method | virtual extentional method | defender method
+--------------
+use : without effecting implementations class we can method to the interface using default keywords 
+
+static method:
+--------------
+use : main purpose if the everyting is static .if the general utility method what is the need of class better to take interface only. 
+use:  to define a utility method inside the interface with static.
+interface methods should call using interface name eg:  Interf.m1();
+from 1.8 version onwanrds inside the interface we can write default and static method.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Predefined Functional Interface
+----------------------------------
+Predicate
+Function
+Consumer
+Supplier
+--------
+Two argument Predefined functional interfaces:
+BiPredicate
+BiFunction
+BiConsumer
+-------------
+primitive Functional interfaces
+IntPredicate
+IntFunction
+IntConsumer
+
+Predicate:
+----------
+this is use for check the condintion..
+it retuns always boolean value.
+it takes only one argument
+
+predicate joining :
+two join the both predicate we are using some methods like
+pl.and(p2).test(30)
+p1.or(p2).test(30)
+p1.negate().test(30)
+
+Function:
+----------
+using this we can perform some operation and it will produce result...
+if the return type is except boolean we can this interface....
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other important topics
+-----------------------
 
 Comparable and comparator
 -------------------------
@@ -50,6 +150,24 @@ comparable : default nature sorting order
 comparator: customized sorting order
              present in java.util package
              it contains compare() method.
+
+static keywords
+------------------
+static is a keywords used in java with the member function and member variable of your class so that we can call those member without using obect or 
+we need to instance class to call those members.
+
+final keywords
+--------------
+final is a keywords in java once you assign a value to variable that variable declared as a final we cannot change the value later that is constant.
+same like method is declared as final we cannot overrie the method. if class also declared as a final we cannot extends a final class.
+
+
+multithread
+-------------
+how many ways we can define a thread :
+1. by extending thread class
+2. by implementing rannable interface
+final and static keywords and queries ,multithread
 
 
 
