@@ -112,9 +112,10 @@ IntConsumer
 
 Predicate:
 ----------
+Predicate<T>
 this is use for check the condintion..
 it retuns always boolean value.
-it takes only one argument
+it takes only one argument and it contains test()
 
 predicate joining :
 two join the both predicate we are using some methods like
@@ -124,9 +125,26 @@ p1.negate().test(30)
 
 Function:
 ----------
+Function<T,R>
 using this we can perform some operation and it will produce result...
-if the return type is except boolean we can this interface....
+here the return type can any type.............
+it takes two arguments and it contains apply()
 
+Function chaining:
+-----------------
+if you have more complex function we can use function chaining....
+for eg:
+f1.andThen(f2).apply(i) :   first f1 function will be apply for the result f2 function will be apply..
+f1.compose(f2).apply(i) :  here reverse order like first f2 and f1.....
+
+Consumer:
+-----------
+Consumer<T>
+using this we can store a data into db or print in console because it won't return a value it only consume the value.
+it takes a one arguments and it contains accept()
+
+Supplier:
+----------
 
 
 
