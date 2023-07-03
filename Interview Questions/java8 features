@@ -143,8 +143,41 @@ Consumer<T>
 using this we can store a data into db or print in console because it won't return a value it only consume the value.
 it takes a one arguments and it contains accept()
 
+consumer chaining:
+------------
+if you want to combine all the consumer
+Consumer<Movies> cc =c1.andThen(c2).andThen(3);
+cc.accept("sdsf");
+
 Supplier:
 ----------
+Supplier<R>
+its just supply a required object but it won't take  any input..
+its only return the value and it contain get()
+
+
+Two argument Predefined functional interfaces:
+--------------------------
+BiPredicate
+-----------
+BiPredicate<T,T>
+if you want add two argument we can use bipredicate....
+rest of functinality is same
+
+BiFunction
+------------
+BiFunction<T,T,R>
+BiPredicate<Integer,Integer>
+if you want add two argument we can use bifunction....
+rest of functinality is same
+
+BiConsumer
+-----------
+BiConsumer<T,T>
+it takes two arguments and perform some operation but it won't return.....
+
+
+
 
 
 
