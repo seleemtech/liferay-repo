@@ -270,6 +270,52 @@ LongBinaryOperator
 DoubleBinaryOperator
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+methods and constructor reference
+--------------------------------
+
+to use resuable code we are using :: operator for refernce a method or condtuctor...
+
+if the method is staic then the syntanx---------> classname::methodname
+if the method is non static ------------------>objectname::methodname
+
+rule: argument must be matched..
+
+constructor reference syntax:  
+constructor::new
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Streams:
+--------
+collection and stream:
+collection is group of object into a sigle entity...
+stream to process object from the  collection
+
+stream is not only applicable for collection.. where ever group of object is there we can go for stream for that we are usinf Stream.of() method.......
+
+if we want use stream we need to use stream().
+filter() ---> it is used for sort the list based on the condintion similiar to predicate
+map()------->to do some operation and return some value similiar to Function
+collect()------->to collect the list
+count()--------> To collect a count 
+sorted()-------->To sort a object based on asc order
+sorted(comparator)=====>customised sorting
+min(comparator)---->in sorting refer first element is a min value and compulsary we must pass comparator object
+max(comparator)---->in sorting refer last element is a min value and compulsary we must pass comparator object
+forEach()-------->to iteratiing a value 
+toArray()-------->To convert stream object into array
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Date and Time API
+----------------
+or joda time api
+
+
+
+
+
+
 
 
 
