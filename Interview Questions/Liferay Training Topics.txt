@@ -384,6 +384,73 @@ USer
 tel
 
 
+Workflow
+---------
+first we need status feild and asset and workflow refernce in service.xml file
+then we need to invoke the workflow hander service
+after enable our entity as asset 
+for that we need invoke two class one assetRendererFactory(Register) and assetRenderer
+in impl we need to start workflow instance 
+WorkflowHandlerRegistryUtil.startWorkflowInstance(newsEntry.getCompanyId(), newsEntry.getGroupId(),
+					newsEntry.getUserId(), NewsEntry.class.getName(), newsEntry.getPrimaryKey(), newsEntry,
+					serviceContext);
+
+after control panel>application>wokflow>proccessbuilder>configuration>assigned wokflow
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sysConfig:
+---------
+first we need to write interface using meta ocd @
+@Meta.OCD(
+    id = "com.sys.config.file.UsersKeyContactEmailConfiguration",
+    localization = "content/Language",
+    name = "key-contact-Email-configuration"
+)
+
+then using config id we can interface 
+@Component(configurationPid = "com.sys.config.file.UsersKeyContactEmailConfiguration",
+service = UserEmailConfig.class)
+
+then using configuration util we can activate the class 
+
+private volatile UsersKeyContactEmailConfiguration _configuration;
+
+	@Activate
+	@Modified
+	protected void activate(Map<String, Object> properties) {
+		_configuration = ConfigurableUtil.createConfigurable(UsersKeyContactEmailConfiguration.class,
+				properties);
+	}
+
+	public Map<String, List<String>> getKeyContactRolesMap() {
+		Map<String, List<String>> keyContactCountryMap = new LinkedHashMap<>();
+		keyContactCountryMap.put("upp-emea", _configuration.getUppEmeaKeyContactEmails());
+		keyContactCountryMap.put("upp-apj", _configuration.getUppApjKeyContactEmails());
+		keyContactCountryMap.put("upp-na", _configuration.getUppNaKeyContactEmails());
+		keyContactCountryMap.put("upp-lar", _configuration.getUppLarKeyContactEmails());
+
+		return keyContactCountryMap;
+	}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Implementing Google SSO using OpenID connect
+how to implement sso single singn on
+1.Go to Control panel>Configuration>System settings>SSO>OpenID connect and Enable the OpenID connect and Save.
+2.Then go to Google console, Search as Google console, as shown below
+3.Then create new project
+4.Then go to credentials options and select OAuth ClientID.
+NOTE: To create an OAuth client ID, you must first configure your consent screen,
+5.In the OAuth consent screen, Give External and Give Create.
+6.Then provide any app name, User E-mail and links as shown 
+Now in credentials, Give create credentials>OAuth ClientID>Select Application type as web application and add the redirect url as shown below and Click Create
+
+Authorised redirect URL: http://localhost:8080/c/portal/login/openidconnect
+
+9.In next page it will show CLIENTID AND SECRET KEY, Copy this in notepad.
+10.Go to OpenId connect provider and Give any provider name like Google Sign in(Your wish), Then copy the ClientId and secret key
+
+11.Provide the Discovery EndPoint like this https://accounts.google.com/.well-known/openid-configuration as shown below and Click Save.
 
 
 
