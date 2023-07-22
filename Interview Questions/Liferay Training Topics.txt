@@ -194,7 +194,18 @@ in liferay the size of the field is fixed, suppose if we have to add the more no
              TRACE : To Log the exception call traces of the code
 			 
 34)any of the classes can be used to achieve folder creation but DLSERVICES AND DLAPPSERVICES can only be used to achieve folder creation in liferay 
-document and media folder.
+document and media folder.  
+
+fileEntry = _dlAppService.addFileEntry(
+				null, repository.getRepositoryId(),
+				DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, fileName,
+				_mimeTypes.getContentType(file), fileName, null, null, null,
+				file, null, null, serviceContext);
+
+Folder = _dlAppLocalService.addFolder(
+					folder.getExternalReferenceCode(), userId, repositoryId,
+					parentFolderId, name, folder.getDescription(),
+					serviceContext);
 
 35)persistance layer and service layer makeup the bottom layers of the backend.
 
