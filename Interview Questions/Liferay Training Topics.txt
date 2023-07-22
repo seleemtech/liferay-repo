@@ -452,6 +452,23 @@ Authorised redirect URL: http://localhost:8080/c/portal/login/openidconnect
 
 11.Provide the Discovery EndPoint like this https://accounts.google.com/.well-known/openid-configuration as shown below and Click Save.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Headless-api
+-------
+using rest builder we can create headless api template
+after we need to configure in cors for our url
+
+controlPanel > sys > securityTool > Portal Cross-Origin Resource Sharing > 
+Add new one 
+url pattern /o/appointments/*
+then we need to write yaml file for methods
+after buildRest
+then impl > java > resource.v1_0 > entityResourceImpl this method we need to implement
+After that we can check in postman using url it is available in baseresourceimpl
+
+
+
 
 
 
