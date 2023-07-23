@@ -467,6 +467,36 @@ after buildRest
 then impl > java > resource.v1_0 > entityResourceImpl this method we need to implement
 After that we can check in postman using url it is available in baseresourceimpl
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+site initializer
+---------------
+widget site : 
+three class needed
+dependencyResolver class
+layout intializer class
+customsiteInitiazer class its invoke siteinitializer service
+
+content site :
+
+in dnd file we need to give providerCapability there we call liferay.site.initializer   it invokes siteinitializerextender class
+if you want add page we need to write in page.json 
+--------
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+close a window : ctrl+w
+switch tab : ctrl+tab
+close application: alt+f4
+incognet window : ctrl+shift+n
+new tab same browser: ctrl+ t
+new tab in difference browser : ctrl+ n
+
+
+
+
+
+
+
 
 
 
