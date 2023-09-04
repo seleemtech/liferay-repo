@@ -1,0 +1,9 @@
+apiDir: "../stealthkart-api/src/main/java"
+apiPackagePath: "com.stealthkart.headless"
+application:
+    baseURI: "/stealthkart"
+    className: "StealthkartApplication"
+    name: "Stealthkart"
+author: "E2Software-011"
+clientDir: "../stealthkart-client/src/main/java"
+testDir: "../stealthkart-test/src/testIntegration/java"

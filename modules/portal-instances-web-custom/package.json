@@ -1,0 +1,19 @@
+{
+	"dependencies": {
+		"frontend-js-web": "*",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.0.0",
+		"@babel/core": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"@babel/preset-react": "^7.0.0",
+		"@liferay/npm-scripts": "48.1.0"
+	},
+	"name": "@liferay/portal-instances-web-custom",
+	"scripts": {
+		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+	},
+	"version": "1.0.0"
+}

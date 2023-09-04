@@ -1,0 +1,5 @@
+Bundle-Name: stealthkart-test
+Bundle-SymbolicName: com.stealthkart.headless.test
+Bundle-Version: 1.0.0
+-includeresource: com.stealthkart.headless.client.jar=../stealthkart-client/build/libs/com.stealthkart.headless.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

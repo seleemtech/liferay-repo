@@ -1,0 +1,97 @@
+components:
+    schemas:
+        Instance:
+            description: Represents Stealthkart.
+            properties:
+                companyId:
+                    type: integer
+                    format: int64
+                emailAddress:
+                    type: string
+                instanceName:
+                    type: string
+            type: object
+info:
+    description: "Stealthkart REST API"
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: "Stealthkart"
+    version: v1.0
+openapi: 3.0.1
+paths:
+    "/{companyId}/instaces":
+        get:
+            operationId: getInstancePage
+            parameters:
+                - in: path
+                  name: companyId
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            responses:
+                200:
+                    content:
+                        appliction/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Instance"
+                                type: array
+                        appliction/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Instance"
+                                type: array
+                    description: "Get Stealthkart"
+            tags: ["Instance"]
+    "/{companyId}/instaces/update":
+        put:
+            operationId: updateInstancePage
+            parameters:
+                - in: path
+                  name: companyId
+                  required: true
+                  schema:
+                      type: integer
+                      format: int64
+            requestBody:
+                content:
+                    appliction/json:
+                        schema:
+                            $ref: "#/components/schemas/Instance"
+                    appliction/xml:
+                        schema:
+                            $ref: "#/components/schemas/Instance"
+            responses:
+                200:
+                    content:
+                        appliction/json:
+                            schema:
+                                $ref: "#/components/schemas/Instance"
+                        appliction/xml:
+                            schema:
+                                $ref: "#/components/schemas/Instance"
+                    description: "Get Stealthkart"
+            tags: [ "Instance" ]
+    "/instaces/Add":
+        post:
+            requestBody:
+                content:
+                    appliction/json:
+                        schema:
+                            $ref: "#/components/schemas/Instance"
+                    appliction/xml:
+                        schema:
+                            $ref: "#/components/schemas/Instance"
+            responses:
+                200:
+                    content:
+                        appliction/json:
+                            schema:
+                                $ref: "#/components/schemas/Instance"
+                        appliction/xml:
+                            schema:
+                                $ref: "#/components/schemas/Instance"
+                    description: "Get Stealthkart"
+            tags: [ "Instance" ]

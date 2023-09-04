@@ -1,0 +1,6 @@
+Bundle-Name: stealthkart-api
+Bundle-SymbolicName: com.stealthkart.headless.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.stealthkart.headless.dto.v1_0,\
+	com.stealthkart.headless.resource.v1_0
