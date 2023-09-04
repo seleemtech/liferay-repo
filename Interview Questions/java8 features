@@ -177,6 +177,147 @@ BiConsumer<T,T>
 it takes two arguments and perform some operation but it won't return.....
 
 
+Primitive version of functional interface
+---------------------------------------
+if use primitive internally autoboxing and autounboxing is won't happen.but problem is we have pass exact valve based on the type...
+Primitive predicate types:
+------------------
+DoublePredicate:
+LongPredicate:
+IntPredicate:
+
+Primitive  types of function:
+--------------------------
+DoubleFunction :  can take input type as double
+                   return type can be anytype
+-------
+IntFunction :    can take int type as input
+--------
+LongFunction: can take long type as input
+----------
+DoubleToIntFunction-->   input type: double
+                         return type: int
+                         method: applyAsInt(doubIe value)
+--------------
+DoubleToLongFunction--->  input type: double
+                          return type: long
+                          method applyAsLong(doub1e)
+--------------
+IntToDoub1eFunction--> app1yAsDoub1e( )
+-------------
+IntToLongFunction-->app1yAsLong( )
+------------
+TolntFunction--- >return type is int
+                  input can be anything
+                  applyAsInt(T value)
+----------
+ToLongFunction
+---------
+TODoubIeFunction
+---------
+
+TolntBiFunction -->return type must be int type but inputs can be anytype
+                    applyAsInt(T t, U u)
+---------------
+ToLorsgBiFunction
+---------
+ToDoubIeBiFunction
+---------
+
+Primitive types of  Consumer :
+------------------------
+IntConsumer-->  void accept (Bnt value)
+                Performs this operation on the given argument.
+LongConsumer
+DoubleConsumer
+-----------
+ObjDoub1eConsumer<T> --->void accept(T t,double value)
+ObjIntConsumer<T>
+ObjLongConsumer<T>
+------------------------------------
+
+Primitive types of Supplier :
+-----------------------
+BooleanSupp1ier ----> getAsB001ean()
+IntSuppIier------> getAsInt()
+LongSupp1ier--------> getAsLong()
+DoubleSupp1ier-----> getAsDoub1e()
+
+=====================================
+UnaryOperator<T>
+----------------
+If input and output are same type then we should go for
+It is child of Function<T,T>
+
+Primitive types of UnaryOperator :
+-----------------------
+IntUnaryOperator:-----> applyAsInt(int)
+LongUnaryOperator :-----> applyAsLong(10ng)
+Dub1eUnaryOperator:------> double applyAsDoub1e(doub1e)
+
+----------------------------------
+
+BinaryOperator :
+---------------
+It is the child of BiFunction<T,T,T>
+BinaryOperator<T>  ----->apply(T,T)
+
+
+Primitive types of BinaryOperator:
+----------------------------------------
+IntBinaryOperator
+LongBinaryOperator
+DoubleBinaryOperator
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+methods and constructor reference
+--------------------------------
+
+to use resuable code we are using :: operator for refernce a method or condtuctor...
+
+if the method is staic then the syntanx---------> classname::methodname
+if the method is non static ------------------>objectname::methodname
+
+rule: argument must be matched..
+
+constructor reference syntax:  
+constructor::new
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Streams:
+--------
+collection and stream:
+collection is group of object into a sigle entity...
+stream to process object from the  collection
+
+stream is not only applicable for collection.. where ever group of object is there we can go for stream for that we are usinf Stream.of() method.......
+
+if we want use stream we need to use stream().
+filter() ---> it is used for sort the list based on the condintion similiar to predicate
+map()------->to do some operation and return some value similiar to Function
+collect()------->to collect the list
+count()--------> To collect a count 
+sorted()-------->To sort a object based on asc order
+sorted(comparator)=====>customised sorting
+min(comparator)---->in sorting refer first element is a min value and compulsary we must pass comparator object
+max(comparator)---->in sorting refer last element is a min value and compulsary we must pass comparator object
+forEach()-------->to iteratiing a value 
+toArray()-------->To convert stream object into array
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Date and Time API
+----------------
+or joda time api
+
+
+
+
+
+
+
+
 
 
 

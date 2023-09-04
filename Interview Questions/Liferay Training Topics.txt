@@ -194,7 +194,18 @@ in liferay the size of the field is fixed, suppose if we have to add the more no
              TRACE : To Log the exception call traces of the code
 			 
 34)any of the classes can be used to achieve folder creation but DLSERVICES AND DLAPPSERVICES can only be used to achieve folder creation in liferay 
-document and media folder.
+document and media folder.  
+
+fileEntry = _dlAppService.addFileEntry(
+				null, repository.getRepositoryId(),
+				DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, fileName,
+				_mimeTypes.getContentType(file), fileName, null, null, null,
+				file, null, null, serviceContext);
+
+Folder = _dlAppLocalService.addFolder(
+					folder.getExternalReferenceCode(), userId, repositoryId,
+					parentFolderId, name, folder.getDescription(),
+					serviceContext);
 
 35)persistance layer and service layer makeup the bottom layers of the backend.
 
@@ -371,6 +382,120 @@ User_
 Role_
 USer	
 tel
+
+
+Workflow
+---------
+first we need status feild and asset and workflow refernce in service.xml file
+then we need to invoke the workflow hander service
+after enable our entity as asset 
+for that we need invoke two class one assetRendererFactory(Register) and assetRenderer
+in impl we need to start workflow instance 
+WorkflowHandlerRegistryUtil.startWorkflowInstance(newsEntry.getCompanyId(), newsEntry.getGroupId(),
+					newsEntry.getUserId(), NewsEntry.class.getName(), newsEntry.getPrimaryKey(), newsEntry,
+					serviceContext);
+
+after control panel>application>wokflow>proccessbuilder>configuration>assigned wokflow
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sysConfig:
+---------
+first we need to write interface using meta ocd @
+@Meta.OCD(
+    id = "com.sys.config.file.UsersKeyContactEmailConfiguration",
+    localization = "content/Language",
+    name = "key-contact-Email-configuration"
+)
+
+then using config id we can interface 
+@Component(configurationPid = "com.sys.config.file.UsersKeyContactEmailConfiguration",
+service = UserEmailConfig.class)
+
+then using configuration util we can activate the class 
+
+private volatile UsersKeyContactEmailConfiguration _configuration;
+
+	@Activate
+	@Modified
+	protected void activate(Map<String, Object> properties) {
+		_configuration = ConfigurableUtil.createConfigurable(UsersKeyContactEmailConfiguration.class,
+				properties);
+	}
+
+	public Map<String, List<String>> getKeyContactRolesMap() {
+		Map<String, List<String>> keyContactCountryMap = new LinkedHashMap<>();
+		keyContactCountryMap.put("upp-emea", _configuration.getUppEmeaKeyContactEmails());
+		keyContactCountryMap.put("upp-apj", _configuration.getUppApjKeyContactEmails());
+		keyContactCountryMap.put("upp-na", _configuration.getUppNaKeyContactEmails());
+		keyContactCountryMap.put("upp-lar", _configuration.getUppLarKeyContactEmails());
+
+		return keyContactCountryMap;
+	}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Implementing Google SSO using OpenID connect
+how to implement sso single singn on
+1.Go to Control panel>Configuration>System settings>SSO>OpenID connect and Enable the OpenID connect and Save.
+2.Then go to Google console, Search as Google console, as shown below
+3.Then create new project
+4.Then go to credentials options and select OAuth ClientID.
+NOTE: To create an OAuth client ID, you must first configure your consent screen,
+5.In the OAuth consent screen, Give External and Give Create.
+6.Then provide any app name, User E-mail and links as shown 
+Now in credentials, Give create credentials>OAuth ClientID>Select Application type as web application and add the redirect url as shown below and Click Create
+
+Authorised redirect URL: http://localhost:8080/c/portal/login/openidconnect
+
+9.In next page it will show CLIENTID AND SECRET KEY, Copy this in notepad.
+10.Go to OpenId connect provider and Give any provider name like Google Sign in(Your wish), Then copy the ClientId and secret key
+
+11.Provide the Discovery EndPoint like this https://accounts.google.com/.well-known/openid-configuration as shown below and Click Save.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Headless-api
+-------
+using rest builder we can create headless api template
+after we need to configure in cors for our url
+
+controlPanel > sys > securityTool > Portal Cross-Origin Resource Sharing > 
+Add new one 
+url pattern /o/appointments/*
+then we need to write yaml file for methods
+after buildRest
+then impl > java > resource.v1_0 > entityResourceImpl this method we need to implement
+After that we can check in postman using url it is available in baseresourceimpl
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+site initializer
+---------------
+widget site : 
+three class needed
+dependencyResolver class
+layout intializer class
+customsiteInitiazer class its invoke siteinitializer service
+
+content site :
+
+in dnd file we need to give providerCapability there we call liferay.site.initializer   it invokes siteinitializerextender class
+if you want add page we need to write in page.json 
+--------
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+close a window : ctrl+w
+switch tab : ctrl+tab
+close application: alt+f4
+incognet window : ctrl+shift+n
+new tab same browser: ctrl+ t
+new tab in difference browser : ctrl+ n
+
+
+
+
+
+
 
 
 
