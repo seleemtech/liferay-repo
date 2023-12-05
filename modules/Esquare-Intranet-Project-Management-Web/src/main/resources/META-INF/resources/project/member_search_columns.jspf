@@ -1,0 +1,12 @@
+
+<liferay-ui:search-container-column-text
+        cssClass="table-cell-expand-small table-cell-minw-150 table-title"
+        name="name"
+        value="<%= member.getName()%>"
+/>
+
+<liferay-ui:search-container-column-text
+        cssClass="table-cell-expand-small table-cell-minw-150"
+        name="Role"
+        value="<%=projectListDisplayContextdd.getRoleNameByMemberId(member.getMemberId()) %>"
+/>

@@ -1,0 +1,14 @@
+dependencies {
+	compile project(":modules:Esquare-Intranet-Project-Headless:Esquare-Intranet-Project-Headless-api")
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	restBuilder group: "com.liferay", name: "com.liferay.portal.tools.rest.builder", version: "1.0.222"
+	// https://mvnrepository.com/artifact/com.liferay/com.liferay.petra.function
+
+// https://mvnrepository.com/artifact/com.liferay/com.liferay.petra.function
+	implementation group: 'com.liferay', name: 'com.liferay.petra.function', version: '5.5.1'
+	compile project(":modules:vitamins:vitamins-api")
+	compile project(":modules:Esquare-Intranet-Project-Management-Services:Esquare-Intranet-Project-Management-Services-api")
+	compile project(":modules:Esquare-Intranet-Helpdesk-Web")
+}
+
+group = "com.esquare.intranet.project.headless"

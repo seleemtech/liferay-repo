@@ -1,0 +1,56 @@
+    <div class="<%="view".equals(viewPage)?"card-type-asset entry-display-style file-card form-check form-check-card form-check-top-left col-sm-3" : "card-type-asset entry-display-style file-card form-check form-check-card form-check-top-left col-8"%>">
+        <div class="card">
+            <div class="aspect-ratio card-item-first">
+                <div class="">
+                    <label>
+                        <c:choose>
+                            <c:when test="<%= Validator.isNull(thumbnailSrc) %>">
+                                <aui:icon
+                                        cssClass="aspect-ratio-item-center-middle aspect-ratio-item-fluid card-type-asset-icon"
+                                        image="documents-and-media" markupView="lexicon"/>
+                            </c:when>
+                            <c:otherwise>
+                                <img alt="" class="aspect-ratio-item-center-middle aspect-ratio-item-fluid"
+                                     src="<%= thumbnailSrc %>"/>
+                            </c:otherwise>
+                        </c:choose>
+
+                        <liferay-document-library:mime-type-sticker
+                                cssClass="sticker-bottom-left"
+                                fileVersion="<%= fileVersion %>"
+                        />
+                    </label>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="card-row">
+                    <div class="autofit-col autofit-col-expand">
+                        <aui:a cssClass="card-title text-truncate" href="<%= previewURL %>"
+                               title="<%= HtmlUtil.escapeAttribute(String.valueOf(Validator.isNotNull(fileVersion.getTitle()))) %>">
+                            <%= Validator.isNotNull(fileVersion) ? fileVersion.getTitle() : StringPool.BLANK %>
+                        </aui:a>
+
+                    </div>
+                    <div class="autofit-col">
+                        <c:if test="<%= !"view".equals(viewPage) %>">
+                        <liferay-ui:icon-menu
+                                direction="right-side"
+                                icon="<%= StringPool.BLANK %>"
+                                markupView="lexicon"
+                                message="<%= StringPool.BLANK %>"
+                                showWhenSingleIcon="<%= true %>"
+                        >
+                            <liferay-ui:icon
+                                    icon="times-circle"
+                                    message="delete"
+                                    url='<%= "javascript:" + "deleteFile(\'" + fileEntry.getFileEntryId() + "\');" %>'
+                            />
+                        </liferay-ui:icon-menu>
+                        </c:if>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,18 @@
+
+<liferay-ui:search-container-column-text
+        cssClass="table-cell-expand-small table-cell-minw-150 table-title"
+        name="name"
+        value="<%= user9.getFullName()%>"
+/>
+
+    <liferay-ui:search-container-column-text
+            cssClass="table-cell-expand-small table-cell-minw-150"
+            name="email-address"
+            property="emailAddress"
+    />
+
+<liferay-ui:search-container-column-text
+        cssClass="table-cell-expand-small table-cell-minw-150"
+        name="Role"
+        value="<%=projectListDisplayContextddd.getRoleName(projectListDisplayContextddd.getResourcesList(projectId),user9.getUserId()) %>"
+/>

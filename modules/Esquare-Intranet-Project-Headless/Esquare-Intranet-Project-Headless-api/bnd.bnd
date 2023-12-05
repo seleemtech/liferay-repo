@@ -1,0 +1,6 @@
+Bundle-Name: Esquare-Intranet-Project-Headless-api
+Bundle-SymbolicName: com.esquare.intranet.project.headless.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.esquare.intranet.project.headless.dto.v1_0,\
+	com.esquare.intranet.project.headless.resource.v1_0

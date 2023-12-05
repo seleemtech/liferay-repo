@@ -1,0 +1,5 @@
+Bundle-Name: Esquare-Intranet-Project-Headless-test
+Bundle-SymbolicName: com.esquare.intranet.project.headless.test
+Bundle-Version: 1.0.0
+-includeresource: com.esquare.intranet.project.headless.client.jar=../Esquare-Intranet-Project-Headless-client/build/libs/com.esquare.intranet.project.headless.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

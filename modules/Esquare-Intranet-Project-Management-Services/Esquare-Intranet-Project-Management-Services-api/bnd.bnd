@@ -1,0 +1,10 @@
+Bundle-Name: Esquare-Intranet-Project-Management-Services-api
+Bundle-SymbolicName: com.esquare.intranet.project.management.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.esquare.intranet.project.management.exception,\
+	com.esquare.intranet.project.management.model,\
+	com.esquare.intranet.project.management.service,\
+	com.esquare.intranet.project.management.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../Esquare-Intranet-Project-Management-Services-service/service.xml

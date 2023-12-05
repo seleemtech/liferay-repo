@@ -1,0 +1,6 @@
+Bundle-Name: Esquare-Intranet-Project-Management-Web
+Bundle-SymbolicName: com.esqure.intranet.project.management.web
+Bundle-Version: 1.0.0
+Export-Package: com.esquare.intranet.helpdesk.web.portlet.workflow,com.esquare.intranet.project.management.constants
+Web-ContextPath: /Esquare-Intranet-Project-Management-Web
+-includeresource: META-INF/resources=build/node/packageRunBuild/resources

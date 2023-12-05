@@ -1,0 +1,4 @@
+Bundle-Name: Esquare-Intranet-Project-Headless-impl
+Bundle-SymbolicName: com.esquare.intranet.project.headless.impl
+Bundle-Version: 1.0.0
+Export-Package: com.esquare.intranet.helpdesk.web.portlet.workflow

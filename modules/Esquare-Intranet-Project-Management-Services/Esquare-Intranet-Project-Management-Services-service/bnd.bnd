@@ -1,0 +1,6 @@
+Bundle-Name: Esquare-Intranet-Project-Management-Services-service
+Bundle-SymbolicName: com.esquare.intranet.project.management.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+-dsannotations-options: inherit

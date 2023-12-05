@@ -1,0 +1,25 @@
+{
+	"dependencies": {
+		"@clayui/alert": "^3.93.0",
+		"@clayui/button": "^3.40.0",
+		"@clayui/card": "3.95.2",
+		"@clayui/date-picker": "3.95.2",
+		"@clayui/css": "3.x",
+		"@clayui/label": "^3.88.0",
+		"@clayui/modal": "^3.95.2",
+		"@clayui/form": "3.95.2",
+		"clay-icon": "^2.24.1",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"react-hook-form": "^6.15.8"
+	},
+	"devDependencies": {
+		"@liferay/npm-scripts": "47.0.0",
+		"react-test-renderer": "^16.12.0"
+	},
+	"name": "Esquare-Intranet-Project-Management-Web",
+	"scripts": {
+		"build": "liferay-npm-scripts build"
+	},
+	"version": "1.0.0"
+}

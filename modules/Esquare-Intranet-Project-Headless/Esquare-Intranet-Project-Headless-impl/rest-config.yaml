@@ -1,0 +1,11 @@
+apiDir: "../Esquare-Intranet-Project-Headless-api/src/main/java"
+apiPackagePath: "com.esquare.intranet.project.headless"
+application:
+    baseURI: "/esquare/intranet/project/headless"
+    className: "EsquareIntranetProjectHeadlessApplication"
+    name: "EsquareIntranetProjectHeadless"
+author: "Mahammed Seleem"
+clientDir: "../Esquare-Intranet-Project-Headless-client/src/main/java"
+compatibilityVersion: 2
+forcePredictableOperationId: true
+testDir: "../Esquare-Intranet-Project-Headless-test/src/testIntegration/java"

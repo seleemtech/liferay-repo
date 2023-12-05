@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.esquare.intranet.project.management.model.Notes">
+		<field name="uuid" type="String" />
+		<field name="noteId" type="long" />
+		<field name="noteTitle" type="String" />
+		<field name="noteDescription" type="String" />
+		<field name="noteType" type="String" />
+		<field name="noteAuthor" type="String" />
+		<field name="noteDate" type="Date" />
+		<field name="projectId" type="long" />
+	</model>
+	<model name="com.esquare.intranet.project.management.model.Projects">
+		<field name="uuid" type="String" />
+		<field name="projectId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="projectName" type="String" />
+		<field name="description" type="String" />
+		<field name="proposedDate" type="Date" />
+		<field name="confirmedDate" type="Date" />
+		<field name="developmentStartDate" type="Date" />
+		<field name="estimatedDate" type="Date" />
+		<field name="durationDate" type="String" />
+		<field name="status" type="int" />
+		<field name="code" type="int" />
+		<field name="documentId" type="long" />
+		<field name="resourceIdSettings" type="String" />
+		<field name="name" type="String" />
+		<field name="contactNumber" type="String" />
+		<field name="contactEmail" type="String" />
+	</model>
+	<model name="com.esquare.intranet.project.management.model.Tasks">
+		<field name="uuid" type="String" />
+		<field name="taskId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="developerTeam" type="String" />
+		<field name="testerTeam" type="String" />
+		<field name="taskStartDate" type="Date" />
+		<field name="taskEndDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="projectId" type="long" />
+	</model>
+	<model name="com.esquare.intranet.project.management.model.TeamMembers">
+		<field name="uuid" type="String" />
+		<field name="memberId" type="long" />
+		<field name="name" type="String" />
+		<field name="memberRole" type="String" />
+		<field name="userId" type="long" />
+		<field name="projectId" type="long" />
+	</model>
+</model-hints>

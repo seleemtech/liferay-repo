@@ -1,0 +1,9 @@
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "release.portal.api"
+    // https://mvnrepository.com/artifact/com.liferay/com.liferay.petra.function
+    implementation group: 'com.liferay', name: 'com.liferay.petra.function', version: '5.5.1'
+
+
+
+
+}

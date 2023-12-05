@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.esquare.intranet.project.management">
+    <author>Mahammed Seleem</author>
+    <namespace>Esquare</namespace>
+
+    <entity uuid="true" remote-service="true" name="Projects" local-service="true">
+        <!-- PK fields -->
+        <column name="projectId" type="long" primary="true"/>
+
+        <!-- Audit fields -->
+        <column name="groupId" type="long"/>
+        <column name="companyId" type="long"/>
+        <column name="userId" type="long"/>
+        <column name="userName" type="String"/>
+
+        <!-- Project fields -->
+        <column name="projectName" type="String"/>
+        <column name="description" type="String"/>
+        <column name="proposedDate" type="Date"/>
+        <column name="confirmedDate" type="Date"/>
+        <column name="developmentStartDate" type="Date"/>
+        <column name="estimatedDate" type="Date"/>
+        <column name="durationDate" type="String"/>
+        <column name="status" type="int"/>
+        <column name="code" type="int"/>
+        <column name="documentId" type="long"/>
+        <column name="resourceIdSettings" type="String"/>
+        <!-- Client fields -->
+        <column name="name" type="String"/>
+        <column name="contactNumber" type="String"/>
+        <column name="contactEmail" type="String"/>
+
+
+        <!-- References -->
+
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetTag"/>
+    </entity>
+
+
+    <entity uuid="true" remote-service="true" name="TeamMembers" local-service="true">
+
+        <!-- PK fields -->
+        <column name="memberId" type="long" primary="true"/>
+
+        <!-- Other fields -->
+        <column name="name" type="String"/>
+        <column name="memberRole" type="String"/>
+        <column name="userId" type="long"/>
+        <!-- FK fields -->
+        <column name="projectId" type="long"/>
+
+        <finder name="ProjectId" return-type="Collection">
+            <finder-column name="projectId"></finder-column>
+        </finder>
+        <finder name="UserId" return-type="TeamMembers">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+
+    <entity uuid="true" remote-service="true" name="Tasks" local-service="true">
+
+        <!-- PK fields -->
+        <column name="taskId" type="long" primary="true"/>
+
+        <!-- Other fields -->
+        <column name="name" type="String"/>
+        <column name="description" type="String"/>
+        <column name="developerTeam" type="String"/>
+        <column name="testerTeam" type="String"/>
+        <column name="taskStartDate" type="Date"/>
+        <column name="taskEndDate" type="Date"/>
+
+        <!-- Workflow fields -->
+        <column name="status" type="int"/>
+        <column name="statusByUserId" type="long"/>
+        <column name="statusByUserName" type="String"/>
+        <column name="statusDate" type="Date"/>
+
+        <!-- FK fields -->
+        <column name="projectId" type="long"/>
+
+        <finder name="ProjectId" return-type="Collection">
+            <finder-column name="projectId"></finder-column>
+        </finder>
+
+    </entity>
+
+    <entity uuid="true" remote-service="true" name="Notes" local-service="true">
+
+        <!-- PK fields -->
+        <column name="noteId" type="long" primary="true"/>
+
+        <!-- Other fields -->
+        <column name="noteTitle" type="String"/>
+        <column name="noteDescription" type="String"/>
+        <column name="noteType" type="String"/>
+        <column name="noteAuthor" type="String"/>
+        <column name="noteDate" type="Date"/>
+
+        <!-- FK fields -->
+        <column name="projectId" type="long"/>
+
+    </entity>
+</service-builder>

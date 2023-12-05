@@ -1,0 +1,16 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compile project(":modules:Esquare-Intranet-Helpdesk-Web")
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.0"
+	compileOnly group: 'com.liferay', name: 'com.liferay.frontend.data.set.taglib'
+// https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.data.set.api
+	compileOnly group: 'com.liferay', name: 'com.liferay.frontend.data.set.api'
+// https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.data.set.web
+	compileOnly group: 'com.liferay', name: 'com.liferay.frontend.data.set.web'
+// https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.js.react.web
+	compileOnly group: 'com.liferay', name: 'com.liferay.frontend.js.react.web'
+// https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.taglib
+	compileOnly group: 'com.liferay', name: 'com.liferay.frontend.taglib', version: '13.0.0'
+
+	compile project(":modules:Esquare-Intranet-Project-Management-Services:Esquare-Intranet-Project-Management-Services-api")
+}

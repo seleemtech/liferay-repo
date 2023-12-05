@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:Esquare-Intranet-Project-Management-Services:Esquare-Intranet-Project-Management-Services-api")
+	compile project(":modules:Esquare-Intranet-Helpdesk-Web")
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../Esquare-Intranet-Project-Management-Services-api/src/main/java"
+}
+
+group = "com.esquare.intranet.project.management"
