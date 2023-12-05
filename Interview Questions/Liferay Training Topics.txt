@@ -186,11 +186,11 @@ in liferay the size of the field is fixed, suppose if we have to add the more no
 			 
 33)What are the Log Levels Supported By Liferay?
              There are 6 log Levels supported by Liferay, you can decide the level based on the log severity.
+             FATAL : To Log the messages which can be a severe or vital issue that harms the complete system.
+             ERROR : To Log the error message which blocks a behavior (functionality) being
+             WARN : To Log the warning messages, which are not critical
              INFO : To Log the useful  information.
              DEBUG : To Log Debug information, use it to debug the code.
-             WARN : To Log the warning messages, which are not critical
-             ERROR : To Log the error message which blocks a behavior (functionality) being
-             FATAL : To Log the messages which can be a severe or vital issue that harms the complete system.
              TRACE : To Log the exception call traces of the code
 			 
 34)any of the classes can be used to achieve folder creation but DLSERVICES AND DLAPPSERVICES can only be used to achieve folder creation in liferay 
