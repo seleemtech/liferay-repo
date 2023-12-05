@@ -1,0 +1,4 @@
+Bundle-Name: Testing-portlet
+Bundle-SymbolicName: Testing.portlet
+Bundle-Version: 1.0.0
+Export-Package: Testing.portlet.constants

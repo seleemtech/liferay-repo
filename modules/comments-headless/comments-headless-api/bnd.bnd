@@ -1,0 +1,6 @@
+Bundle-Name: comments-headless-api
+Bundle-SymbolicName: com.comments.headless.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.comments.headless.dto.v1_0,\
+	com.comments.headless.resource.v1_0

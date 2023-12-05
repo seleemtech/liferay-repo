@@ -1,0 +1,5 @@
+Bundle-Name: comments-headless-test
+Bundle-SymbolicName: com.comments.headless.test
+Bundle-Version: 1.0.0
+-includeresource: com.comments.headless.client.jar=../comments-headless-client/build/libs/com.comments.headless.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

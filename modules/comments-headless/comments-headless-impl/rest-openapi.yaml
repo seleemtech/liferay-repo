@@ -1,0 +1,372 @@
+components:
+    schemas:
+        Comments:
+            properties:
+                message:
+                    type: string
+                fileName:
+                    type: string
+                base64Doc:
+                    type: string
+                groupId:
+                    format: int64
+                    type: integer
+                objectDefinitionId:
+                    format: int64
+                    type: integer
+                objectDefinitionName:
+                    type: string
+                userId:
+                    format: int64
+                    type: integer
+                companyId:
+                    format: int64
+                    type: integer
+                status:
+                    $ref: "#/components/schemas/Status"
+            type: object
+        Workflow:
+            properties:
+                transitionName:
+                    type: string
+                comment:
+                    type: string
+                workflowTaskId:
+                    format: int64
+                    type: integer
+                assigneeUserId:
+                    format: int64
+                    type: integer
+                userId:
+                    format: int64
+                    type: integer
+                companyId:
+                    format: int64
+                    type: integer
+                groupId:
+                    format: int64
+                    type: integer
+                isAssignedToSingleUser:
+                    type : boolean
+                isWorkflowCompleted:
+                    type : boolean
+                workflowTaskAssigneeUserName:
+                    type: string
+                TaskContent:
+                    type: string
+                worflowTansition:
+                    items:
+                     $ref: "#/components/schemas/WorflowTansition"
+                assignableUser:
+                    items:
+                     $ref: "#/components/schemas/AssignableUser"
+            type: object
+        Notification:
+            properties:
+                notificationEventId:
+                    format: int64
+                    type: integer
+                notificationMessage:
+                    type: string
+                notificationTimeDiff:
+                    type: string
+                userId:
+                    format: int64
+                    type: integer
+                workflowTaskId:
+                    format: int64
+                    type: integer
+            type: object
+        CustomObjectDefinition:
+            properties:
+                accountEntryRestricted:
+                    type: boolean
+                accountEntryRestrictedObjectFieldName:
+                    type: string
+                actions:
+                    additionalProperties:
+                        additionalProperties:
+                            type: string
+                        type: object
+                    readOnly: true
+                    type: object
+                active:
+                    type: boolean
+                dateCreated:
+                    format: date
+                    readOnly: true
+                    type: string
+                dateModified:
+                    format: date
+                    readOnly: true
+                    type: string
+                defaultLanguageId:
+                    type: string
+                enableCategorization:
+                    type: boolean
+                enableComments:
+                    type: boolean
+                enableLocalization:
+                    type: boolean
+                enableObjectEntryHistory:
+                    type: boolean
+                externalReferenceCode:
+                    type: string
+                id:
+                    format: int64
+                    readOnly: true
+                    type: integer
+                label:
+                    additionalProperties:
+                        type: string
+                    type: object
+                modifiable:
+                    type: boolean
+                name:
+                    type: string
+                panelAppOrder:
+                    type: string
+                panelCategoryKey:
+                    type: string
+                parameterRequired:
+                    readOnly: true
+                    type: boolean
+                pluralLabel:
+                    additionalProperties:
+                        type: string
+                    type: object
+                portlet:
+                    type: boolean
+                restContextPath:
+                    readOnly: true
+                    type: string
+                scope:
+                    type: string
+                status:
+                    $ref: "#/components/schemas/Status"
+                storageType:
+                    type: string
+                system:
+                    type: boolean
+                titleObjectFieldName:
+                    type: string
+            type: object
+        Status:
+            properties:
+                code:
+                    format: int32
+                    type: integer
+                label:
+                    type: string
+                label_i18n:
+                    type: string
+            type: object
+        WorflowTansition:
+            properties:
+                label:
+                    type: string
+            type: object
+        AssignableUser:
+            properties:
+                name:
+                    type: string
+                userId:
+                    format: int64
+                    type: integer
+            type: object
+info:
+    description: "CommentsHeadless REST API"
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: "CommentsHeadless"
+    version: v1.0
+openapi: 3.0.1
+paths:
+    "/post-comments-entrys":
+        post:
+            operationId: postCommentsEntry
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Comments"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Comments"
+            responses:
+                200:
+                    description: Sucessfully added comments entry
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Comments"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Comments"
+            tags: ["Comments"]
+    "/get-comments-entrys/{companyId}/{objectDefinitionName}":
+        get:
+            operationId: getCommentsEntry
+            parameters:
+                - in: path
+                  name: companyId
+                  required: true
+                  schema:
+                      format: int64
+                      type: integer
+                - in: path
+                  name: objectDefinitionName
+                  required: true
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: Sucessfully getting comments entry
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Comments"
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Comments"
+            tags: ["Comments"]
+    "/workflow/assign-to-me":
+        post:
+            operationId: assignToMe
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Workflow"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Workflow"
+            responses:
+                200:
+                    description: Sucessfully workflow assigned
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+            tags: ["Workflow"]
+    "/workflow/complete-task-assign":
+        post:
+            operationId: completeAssignTask
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/Workflow"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/Workflow"
+            responses:
+                200:
+                    description: Sucessfully workflow assigned
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+            tags: ["Workflow"]
+    "/custom-object-definitions":
+        get:
+            operationId: getObjectDefinitionsPage
+            parameters:
+                - in: query
+                  name: aggregationTerms
+                  schema:
+                      items:
+                          type: string
+                      type: array
+                - in: query
+                  name: filter
+                  schema:
+                      type: string
+                - in: query
+                  name: page
+                  schema:
+                      type: integer
+                - in: query
+                  name: pageSize
+                  schema:
+                      type: integer
+                - in: query
+                  name: search
+                  schema:
+                      type: string
+                - in: query
+                  name: sort
+                  schema:
+                      type: string
+                - in: header
+                  name: Accept-Language
+                  schema:
+                      type: string
+            responses:
+                200:
+                    description: Sucessfully getting object Definition
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/CustomObjectDefinition"
+                                type: array
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/CustomObjectDefinition"
+                                type: array
+            tags: ["CustomObjectDefinition"]
+    "/get-user-notifications/{userId}":
+        get:
+            operationId: getUserNotification
+            parameters:
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      format: int64
+                      type: integer
+            responses:
+                200:
+                    description: Sucessfully getting user notification
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Notification"
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/Notification"
+            tags: ["Notification"]
+    "/get-workflow-task/{workflowTaskId}":
+        get:
+            operationId: getWorkflowTask
+            parameters:
+                - in: path
+                  name: workflowTaskId
+                  required: true
+                  schema:
+                      format: int64
+                      type: integer
+            responses:
+                200:
+                    description: Sucessfully getting workflow task
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/Workflow"
+            tags: ["Workflow"]

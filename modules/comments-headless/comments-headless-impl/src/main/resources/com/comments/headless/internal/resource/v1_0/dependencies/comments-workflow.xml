@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+
+<workflow-definition
+	xmlns="urn:liferay.com:liferay-workflow_7.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:liferay.com:liferay-workflow_7.4.0 http://www.liferay.com/dtd/liferay-workflow-definition_7_4_0.xsd"
+>
+<name>Comments Workflow</name>
+	<description>A comments approver can approve a workflow content.</description>
+	<version>13</version>
+	<state>
+		<name>Create</name>
+		<description>Begin a workflow.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						-509,
+						119
+					]
+				}
+			]]>
+		</metadata>
+		<initial>true</initial>
+		<labels>
+			<label language-id="en_US">
+				Create
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Created
+					</label>
+				</labels>
+				<name>Created</name>
+				<target>Manager Review</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</state>
+	<state>
+		<name>End</name>
+		<description>Conclude the workflow.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						786,
+						116.99998474121094
+					],
+					"terminal": true
+				}
+			]]>
+		</metadata>
+		<actions>
+			<notification>
+				<name>Approved Notification</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Approved your comment]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<user />
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<labels>
+			<label language-id="en_US">
+				End
+			</label>
+		</labels>
+	</state>
+	<task>
+		<name>Manager Review</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						-114,
+						94
+					]
+				}
+			]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>Pending</name>
+				<description></description>
+				<status>1</status>
+				<priority>1</priority>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<notification>
+				<name>Manager Review</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Request for approval]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<roles>
+						<role>
+							<role-type>regular</role-type>
+							<name>Workflow Managaer</name>
+							<auto-create>false</auto-create>
+						</role>
+					</roles>
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Workflow Managaer</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Manager Review
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Manager Approved
+					</label>
+				</labels>
+				<name>Manager Approved</name>
+				<target>Assignee Review</target>
+				<default>true</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Manager Reject
+					</label>
+				</labels>
+				<name>Manager Reject</name>
+				<target>Creater Update</target>
+				<default>false</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>Assignee Review</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						346,
+						96
+					]
+				}
+			]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>Schedule</name>
+				<description></description>
+				<status>7</status>
+				<priority>1</priority>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<action>
+				<name>Approve</name>
+				<description></description>
+				<status>0</status>
+				<priority>2</priority>
+				<execution-type>onExit</execution-type>
+			</action>
+			<notification>
+				<name>Assignee Notification</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[manager assign workflow to you]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<roles>
+						<role>
+							<role-type>regular</role-type>
+							<name>Workflow Approver</name>
+							<auto-create>false</auto-create>
+						</role>
+					</roles>
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Workflow Approver</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Assignee Review
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Assignee Approved
+					</label>
+				</labels>
+				<name>Assignee Approved</name>
+				<target>End</target>
+				<default>true</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Assignee Reject
+					</label>
+				</labels>
+				<name>Assignee Reject</name>
+				<target>Creater Update</target>
+				<default>false</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>Creater Update</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						-127,
+						338
+					]
+				}
+			]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>Deny</name>
+				<description></description>
+				<status>4</status>
+				<priority>1</priority>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<notification>
+				<name>Creater Notification</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Request rejected and resubmitted]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<user />
+				</recipients>
+				<execution-type>onAssignment</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<user />
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Creater Update
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						Resubmit
+					</label>
+				</labels>
+				<name>Resubmit</name>
+				<target>Manager Review</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+</workflow-definition>

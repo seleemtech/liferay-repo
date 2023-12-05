@@ -1,0 +1,3 @@
+Bundle-Name: comments-headless-impl
+Bundle-SymbolicName: com.comments.headless.impl
+Bundle-Version: 1.0.0

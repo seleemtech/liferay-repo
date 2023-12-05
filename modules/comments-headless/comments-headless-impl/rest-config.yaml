@@ -1,0 +1,9 @@
+apiDir: "../comments-headless-api/src/main/java"
+apiPackagePath: "com.comments.headless"
+application:
+    baseURI: "/comments-headless"
+    className: "CommentsHeadlessApplication"
+    name: "CommentsHeadless"
+author: "E2Software-011"
+clientDir: "../comments-headless-client/src/main/java"
+testDir: "../comments-headless-test/src/testIntegration/java"

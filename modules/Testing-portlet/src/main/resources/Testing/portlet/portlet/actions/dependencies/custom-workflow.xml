@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+
+<workflow-definition
+	xmlns="urn:liferay.com:liferay-workflow_7.4.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:liferay.com:liferay-workflow_7.4.0 http://www.liferay.com/dtd/liferay-workflow-definition_7_4_0.xsd"
+>
+<name>Comments multliLevel Workflow</name>
+	<version>18</version>
+	<state>
+		<name>13c5a0bf-c1e3-433a-87fa-05ce8105c9b8</name>
+		<description>Begin a workflow.</description>
+		<metadata><![CDATA[{"xy":[300,100],"transitions":{"1a1aef7f-fe05-4b01-ac6a-a73335072daf":{"bendpoints":[]}}}]]></metadata>
+		<initial>true</initial>
+		<labels>
+			<label language-id="en_US">
+				Start
+			</label>
+		</labels>
+		<transitions>
+            <transition>
+                <name>1a1aef7f-fe05-4b01-ac6a-a73335072daf</name>
+                <target>b7efbebf-51a5-40df-bdac-f19d3e3e8ade</target>
+                <default>true</default>
+            </transition>
+		</transitions>
+	</state>
+	<state>
+		<name>fddb6b94-b3e0-4332-aab7-b0a0df41a22c</name>
+		<description>Conclude the workflow.</description>
+		<metadata>
+			<![CDATA[
+				{
+					"xy": [
+						300,
+						400
+					],
+					"terminal": true
+				}
+			]]>
+		</metadata>
+		<actions>
+			<notification>
+				<name>Approved</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Your entity is approved]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<user />
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<labels>
+			<label language-id="en_US">
+				End
+			</label>
+		</labels>
+	</state>
+	<task>
+		<name>b7efbebf-51a5-40df-bdac-f19d3e3e8ade</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata><![CDATA[{"xy":[651,118],"transitions":{"fcd0e6ef-f5de-48a0-8284-934c81791bd3":{"bendpoints":[]}}}]]></metadata>
+		<actions>
+			<notification>
+				<name>Employee Created</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Employee created]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<roles>
+						<role>
+							<role-type>regular</role-type>
+							<name>Workflow Managaer</name>
+							<auto-create>false</auto-create>
+						</role>
+					</roles>
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Workflow Managaer</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Workflow Manager
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						assign
+					</label>
+				</labels>
+				<name>95dc487b-df32-414d-8334-ed035d44fe1b</name>
+				<target>edc297eb-614b-488a-9674-0c2f83e8e2fe</target>
+				<default>true</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						reject
+					</label>
+				</labels>
+				<name>fcd0e6ef-f5de-48a0-8284-934c81791bd3</name>
+				<target>152098ca-99fa-4436-a961-036c74ecf62a</target>
+				<default>false</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>edc297eb-614b-488a-9674-0c2f83e8e2fe</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata><![CDATA[{"xy":[629,306],"transitions":{"8ab01cbb-9b7a-42cc-bcfb-1e6be5806860":{"bendpoints":[]}}}]]></metadata>
+		<actions>
+			<action>
+				<name>Scheduled</name>
+				<description></description>
+				<status>7</status>
+				<priority>1</priority>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<action>
+				<name>Approved</name>
+				<description></description>
+				<status>0</status>
+				<priority>2</priority>
+				<execution-type>onExit</execution-type>
+			</action>
+			<notification>
+				<name>Employee approved</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[Employee approved by manager]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<roles>
+						<role>
+							<role-type>regular</role-type>
+							<name>Workflow Approver</name>
+							<auto-create>false</auto-create>
+						</role>
+					</roles>
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>Workflow Approver</name>
+					<auto-create>false</auto-create>
+				</role>
+			</roles>
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Workflow Approver
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						approved
+					</label>
+				</labels>
+				<name>7fe22de6-981b-411f-88eb-b22d68057013</name>
+				<target>fddb6b94-b3e0-4332-aab7-b0a0df41a22c</target>
+				<default>true</default>
+			</transition>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						reject
+					</label>
+				</labels>
+				<name>8ab01cbb-9b7a-42cc-bcfb-1e6be5806860</name>
+				<target>152098ca-99fa-4436-a961-036c74ecf62a</target>
+				<default>false</default>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>152098ca-99fa-4436-a961-036c74ecf62a</name>
+		<description>Ask a user to work on the item.</description>
+		<metadata><![CDATA[{"xy":[973,293],"transitions":{"aa7e49b1-0e34-4291-be88-7cc82d97e4f2":{"bendpoints":[]}}}]]></metadata>
+		<actions>
+			<notification>
+				<name>rejected</name>
+				<description>
+					<![CDATA[]]>
+				</description>
+				<template>
+					<![CDATA[rejected]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>
+				<recipients receptionType="to">
+					<user />
+				</recipients>
+				<execution-type>onEntry</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<user />
+		</assignments>
+		<labels>
+			<label language-id="en_US">
+				Update
+			</label>
+		</labels>
+		<transitions>
+			<transition>
+				<labels>
+					<label language-id="en_US">
+						resubmit
+					</label>
+				</labels>
+				<name>aa7e49b1-0e34-4291-be88-7cc82d97e4f2</name>
+				<target>b7efbebf-51a5-40df-bdac-f19d3e3e8ade</target>
+				<default>true</default>
+			</transition>
+		</transitions>
+	</task>
+</workflow-definition>
