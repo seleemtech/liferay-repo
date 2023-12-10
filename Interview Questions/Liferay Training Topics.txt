@@ -7,6 +7,8 @@
 2.1)what is dependency injector: 
               Prior to Liferay DXP 7.2, Service Builder modules could only use Spring for dependency injection (DI).
 			  Now OSGi Declarative Services (DS) is the default dependency injection mechanism for new Service Builder modules.
+
+Declarative Services (DS) provides a service component model on top of OSGi Services. DS service components are marked with the @Component annotation and implement or extend a service class. Service components can refer to and use each other's services.
 -----------------------------------------------------------------------------------------------------------------------
 3)what is Service-Builder;
              a model-driven code generation tool built by Liferay that allows developers to define custom object models called entities.
@@ -292,7 +294,7 @@ Server Administration(log levels db cache)
 User
 Organization
 User group
-Creating Page (Private and Public)
+Creating Page (Private and Public) System Settings > Release Feature Flags
 
 Table
 
