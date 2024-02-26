@@ -1,0 +1,7 @@
+Bundle-Name: my-automations-app
+Bundle-SymbolicName: com.my.automations.app
+Bundle-Version: 1.0.0
+Export-Package: com.my.automations.app.constants
+Import-Package: *;resolution:=optional
+
+Web-ContextPath: /my-automations-app

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="api.master.slayer.model.ApiMapKey">
+		<field name="uuid" type="String" />
+		<field name="apiMapKeyId" type="long" />
+		<field name="name" type="String" />
+		<field name="key" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="typeSettings" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="api.master.slayer.model.ConnectedAccounts">
+		<field name="uuid" type="String" />
+		<field name="c_accountId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="appName" type="String" />
+		<field name="refreshToken" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="api.master.slayer.model.MasterMetaData">
+		<field name="uuid" type="String" />
+		<field name="mmdId" type="long" />
+		<field name="masterUrlId" type="long" />
+		<field name="appSubUrl" type="String" />
+		<field name="httpMethod" type="String" />
+		<field name="httpMethodName" type="String" />
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="api.master.slayer.model.MasterUrl">
+		<field name="uuid" type="String" />
+		<field name="masterUrlId" type="long" />
+		<field name="appName" type="String" />
+		<field name="baseUrl" type="String" />
+		<field name="svgIcon" type="String" />
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>

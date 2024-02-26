@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="api.master.slayer">
+	<namespace>API</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="MasterUrl" remote-service="true" uuid="true">
+		<!-- PK fields -->
+
+		<column name="masterUrlId" primary="true" type="long" id-type="increment" />
+
+		<!-- Main fields -->
+		
+		<column name="appName" type="String" />
+		<column name="baseUrl" type="String" />
+		<column name="svgIcon" type="String" />
+
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Finder methods -->
+
+		<finder name="AppName" return-type="MasterUrl">
+			<finder-column name="appName" />
+		</finder>
+
+	</entity>
+	
+	<entity local-service="true" name="MasterMetaData" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="mmdId" primary="true" type="long" id-type="increment" />
+		<column name="masterUrlId" type="long" />
+
+		<!-- Main fields -->
+		
+		<column name="appSubUrl" type="String" />
+		<column name="httpMethod" type="String" />
+		<column name="httpMethodName" type="String" />
+
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+	</entity>
+	<entity local-service="true" name="ConnectedAccounts" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="c_accountId" primary="true" type="long" />
+		<column name="emailAddress" type="String" />
+		<column name="appName" type="String" />
+		<column name="refreshToken" type="String" />
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="companyId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- References -->
+		<finder name="AppName" return-type="Object">
+			<finder-column name="appName"/>
+		</finder>
+		<finder name="GetAccount" return-type="Object">
+			<finder-column name="appName"/>
+			<finder-column name="emailAddress"/>
+		</finder>
+
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId"/>
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="ApiMapKey" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="apiMapKeyId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="key" type="String" />
+		<column name="typeSettings" type="String" />
+		<!-- Audit fields -->
+
+		<column name="userId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- References -->
+		<finder name="Name" return-type="Object">
+			<finder-column name="name"/>
+		</finder>
+
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId"/>
+		</finder>
+	</entity>
+
+	
+</service-builder>

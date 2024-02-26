@@ -1,0 +1,10 @@
+Bundle-Name: api-master-slayer-api
+Bundle-SymbolicName: api.master.slayer.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	api.master.slayer.exception,\
+	api.master.slayer.model,\
+	api.master.slayer.service,\
+	api.master.slayer.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../api-master-slayer-service/service.xml

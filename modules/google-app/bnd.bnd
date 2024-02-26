@@ -1,0 +1,7 @@
+Bundle-Name: google-app
+Bundle-SymbolicName: com.google.app
+Bundle-Version: 1.0.0
+Export-Package: \
+    	com.google.app.constants,\com.google.app.Util
+Import-Package: *;resolution:=optional
+Web-ContextPath: /google-app

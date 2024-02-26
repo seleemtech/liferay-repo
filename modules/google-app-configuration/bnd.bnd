@@ -1,0 +1,9 @@
+Bundle-Name: google-app-configuration
+Bundle-SymbolicName: com.google.app.configuration
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.google.app.configuration.activator,\
+	com.google.app.configuration.category,\
+	com.google.app.configuration.section,\
+	com.google.app.configuration,\
+	com.google.app.configuration.constants

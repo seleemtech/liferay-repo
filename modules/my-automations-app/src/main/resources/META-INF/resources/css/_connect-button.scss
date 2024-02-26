@@ -1,0 +1,29 @@
+.add-connect{
+    display:flex;
+    justify-content:space-between;
+    margin: 0 10px;
+}
+
+.head-text{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.add-btn{
+    border:1px solid;
+    background: #10a753;
+    border-radius:25px;
+    padding:5px 20px;
+}
+.add-btn span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.add-btn a{
+    text-decoration:none;
+    font-size:0.9rem;
+    font-weight:550;
+    color:#fff;
+}

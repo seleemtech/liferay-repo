@@ -1,0 +1,43 @@
+.connected-card {
+  border-radius: 15px;
+
+  .ac-create {
+    font-size: 0.7rem;
+    font-weight: 450;
+    margin: 10px 0;
+  }
+
+  .connection-img {
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid green;
+    border-radius: 100%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    img {
+      max-width: 38px;
+      padding:3px;
+    }
+  }
+
+  .card-btn {
+    border: none;
+    background: none;
+
+    &:hover {
+      color: orange;
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-evenly;
+    background: none;
+  }
+}

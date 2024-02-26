@@ -1,0 +1,64 @@
+.new-auto {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #5bb4e3;
+  box-sizing: border-box;
+}
+
+.icons-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 15px;
+  height: 120px;
+  width: 120px;
+}
+
+.icon:hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px;
+  background: #f35a381a;
+  border: 1px solid #f35a381a;
+  border-radius: 5px;
+}
+
+.icon img {
+  max-height: 50px;
+  max-width: 50px;
+  transition: all .2s ease-in-out;
+  margin: 10px;
+}
+
+.icon-name {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: .75rem;
+}
+
+@import '_connected-card';
+@import '_connect-button';
+
+
+

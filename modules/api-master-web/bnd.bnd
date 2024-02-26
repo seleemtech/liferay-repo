@@ -1,0 +1,5 @@
+Bundle-Name: api-master-web
+Bundle-SymbolicName: com.api.master.web
+Bundle-Version: 1.0.0
+Export-Package: com.api.master.web.constants
+Web-ContextPath: /google-app
