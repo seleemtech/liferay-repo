@@ -1,0 +1,124 @@
+
+Groovy Script based on the webContent name
+
+import com.liferay.dynamic.data.mapping.model.DDMStructure
+import com.liferay.journal.model.JournalArticle
+import com.liferay.journal.service.JournalArticleLocalServiceUtil
+import com.liferay.portal.kernel.exception.PortalException
+import com.liferay.portal.kernel.theme.ThemeDisplay
+import com.liferay.portal.kernel.xml.Document
+import com.liferay.portal.kernel.xml.DocumentException
+import com.liferay.portal.kernel.xml.Element
+import com.liferay.portal.kernel.xml.SAXReaderUtil
+import com.liferay.portal.kernel.service.ServiceContext
+
+def articleUrlNameList = []
+articleUrlNameList.add("test-groovy-web-content")
+articleUrlNameList.add("sec-test-groovy-web-content")
+
+try {
+    for (String articleUrlName : articleUrlNameList) {
+        JournalArticle journalArticleContent = JournalArticleLocalServiceUtil.getArticleByUrlTitle(20119, articleUrlName)
+        String content = journalArticleContent.getContentByLocale("en_US")
+        DDMStructure ddmStructure = journalArticleContent.getDDMStructure()
+        Set<String> fieldNames = ddmStructure.getFieldNames()
+        Document doc = SAXReaderUtil.read(content)
+        Element element = doc.getRootElement()
+        List<Element> elements = element.elements()
+
+        for (Element elementItem : elements) {
+            for (String fieldName : fieldNames) {
+                if (elementItem.attributeValue("name").equalsIgnoreCase(fieldName)) {
+                    String dynamicContent = elementItem.element("dynamic-content").getText()
+                    dynamicContent = modifyContent(dynamicContent)
+                    elementItem.element("dynamic-content").setText(dynamicContent)
+                }
+            }
+        }
+
+        ServiceContext serviceContext = new ServiceContext()
+        serviceContext.setScopeGroupId(journalArticleContent.getGroupId())
+        serviceContext.setUserId(journalArticleContent.getUserId())
+
+        JournalArticleLocalServiceUtil.updateArticle(
+            journalArticleContent.getUserId(),
+            journalArticleContent.getGroupId(),
+            journalArticleContent.getFolderId(),
+            journalArticleContent.getArticleId(),
+            journalArticleContent.getVersion(),
+            doc.asXML(),
+            serviceContext
+        )
+    }
+} catch (PortalException | DocumentException e) {
+    e.printStackTrace()
+}
+
+public static String modifyContent(String content) {
+    content = content.replaceAll("\\b(?i)Seleem\\s+Test(?=\\s+Life\\b)", "Seleem")
+	
+   // content = content.replaceAll("\\b(?i)Seleem(?!\\s+Life\\b)", "Seleem Life")
+    return content
+}
+
+
+Groovy Script based on the structur 
+
+import com.liferay.dynamic.data.mapping.model.DDMStructure
+import com.liferay.journal.model.JournalArticle
+import com.liferay.journal.service.JournalArticleLocalServiceUtil
+import com.liferay.portal.kernel.exception.PortalException
+import com.liferay.portal.kernel.theme.ThemeDisplay
+import com.liferay.portal.kernel.xml.Document
+import com.liferay.portal.kernel.xml.DocumentException
+import com.liferay.portal.kernel.xml.Element
+import com.liferay.portal.kernel.xml.SAXReaderUtil
+import com.liferay.portal.kernel.service.ServiceContext
+import com.liferay.portal.kernel.util.OrderByComparator
+
+OrderByComparator<JournalArticle> orderByComparator = null
+
+try {
+    List<JournalArticle> journalArticleContents = JournalArticleLocalServiceUtil.getArticlesByStructureId(20119, 783005, -1, -1, orderByComparator)
+    
+    for (JournalArticle journalArticleContent : journalArticleContents) {
+        String content = journalArticleContent.getContentByLocale("en_US")
+        DDMStructure ddmStructure = journalArticleContent.getDDMStructure()
+        Set<String> fieldNames = ddmStructure.getFieldNames()
+        Document doc = SAXReaderUtil.read(content)
+        Element element = doc.getRootElement()
+        List<Element> elements = element.elements()
+        
+        for (Element elementItem : elements) {
+            for (String fieldName : fieldNames) {
+                if (elementItem.attributeValue("name").equalsIgnoreCase(fieldName)) {
+                    String dynamicContent = elementItem.element("dynamic-content").getText()
+                    dynamicContent = modifyContent(dynamicContent)
+                    elementItem.element("dynamic-content").setText(dynamicContent)
+                }
+            }
+        }
+        
+        ServiceContext serviceContext = new ServiceContext()
+        serviceContext.setScopeGroupId(journalArticleContent.getGroupId())
+        serviceContext.setUserId(journalArticleContent.getUserId())
+        
+        JournalArticleLocalServiceUtil.updateArticle(
+            journalArticleContent.getUserId(),
+            journalArticleContent.getGroupId(),
+            journalArticleContent.getFolderId(),
+            journalArticleContent.getArticleId(),
+            journalArticleContent.getVersion(),
+            doc.asXML(),
+            serviceContext
+        )
+    }
+} catch (PortalException | DocumentException e) {
+    e.printStackTrace()
+}
+
+public static String modifyContent(String content) {
+    content = content.replaceAll("\\b(?i)Edelweiss\\s+Tokio(?=\\s+Life\\b)", "Edelweiss")
+    return content
+}
+
