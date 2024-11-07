@@ -1,3 +1,12 @@
--Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787
+
+configuring dubug.
+-------------------
+-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787  = Add this line into setenv in bin folder.
 
 LDS -> Run -> Debug Configuration -> Remote Java Application -> chnage port -& add class> apply
+
+increasing gradle size.
+-------------------
+org.gradle.daemon=true
+org.gradle.jvmargs=-Xmx2560m
+ add into gradle.properties file.
