@@ -1,0 +1,90 @@
+PublikationsdatumVor 2 Jahren - 22111 Aufrufe
+Hey, so a quick post today about how to set up JNDI connections in Liferay CE 7.4 or Liferay DXP 7.4.
+
+Liferay moved jars around in 7.4. No longer are there key jars in the Tomcat lib/ext directory (or for other application servers).
+
+To set up JNDI resources under 7.4, you'll need to put the necessary JDBC jars into the Tomcat lib directory (or the lib directory of your application server). In my example below I'm using an Oracle database, so I needed to copy the ojdbc8.jar into the tomcat-9.0.56/lib directory.
+
+This applies for any JDBC jar, including MySQL and Postgres; just because Liferay is able to connect using the properties, this does not mean that Tomcat would have access to the jars for a JNDI connection.
+
+If you are going to use the Hikari Connection Pool, you need to copy the hikaricp jar and an slf4j-api jar (a dependency of Hikari CP) also to the Tomcat lib directory.
+
+You should note that there is no longer OOTB support for a lib/ext directory like Liferay used in previous releases, so you can't just copy your old lib/ext directory to the new bundle, it's not going to work.
+
+With these in place, you can define your JNDI resources.
+
+I tend to put mine into the Tomcat conf/Catalina/localhost/ROOT.xml like follows:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context crossContext="true">
+	<JarScanner className="com.liferay.support.tomcat.util.scan.NOPJarScanner" />
+
+	<Manager pathname="" />
+
+	<Resource name="jdbc/liferay" auth="Container"
+		factory="com.zaxxer.hikari.HikariJNDIFactory"
+		type="javax.sql.DataSource"
+		minimumIdle="5" 
+		maximumPoolSize="10"
+		connectionTimeout="300000"
+		driverClassName="oracle.jdbc.OracleDriver"
+		jdbcUrl="jdbc:oracle:thin:@192.168.1.213:1521/liferay"
+		dataSource.user="liferay"
+	dataSource.password="password" />
+</Context>
+Then in portal-ext.properties I just need to use the JNDI reference: jdbc.default.jndi.name=jdbc/liferay.
+
+And, if using external databases, you still need to use the portal class loader as demonstrated here: https://help.liferay.com/hc/en-us/articles/360029316251-Connecting-to-JNDI-Data-Sources but slightly updated per below...
+
+Hopefully this helps with your 7.4 JNDI setup!
+
+Update 02/23/2022...
+You'll see in the comments where Matthias Bläsing was having an issue with trying to access JNDI, and actually the article that I linked is partially the right solution for 7.4, but not completely as I had originally posted.
+
+In 7.4 Liferay introduced the "Shielded Class Loader" in an effort to shield the webapp class loader (the guy that Tomcat sets up for us and knows about the JNDI artifacts) from the OSGi container.
+
+In doing so, this actually breaks the Liferay class loader trick because PortalClassLoaderUtil.getClassLoader() returns the shielded class loader, not the webapp class loader.
+
+To access the webapp class loader, we have to go a bit further... Here's the Liferay example, but fixed to deal with the shielded class loader:
+
+Thread thread = Thread.currentThread();
+
+// Get the thread's class loader. You'll reinstate it after using
+// the data source you look up using JNDI
+ClassLoader origLoader = thread.getContextClassLoader();
+
+// get the shielded class loader
+ClassLoader shieldedClassLoader = PortalClassLoaderUtil.getClassLoader();
+
+// get the webapp class loader from it
+ClassLoader webappClassLoader = shieldedClassLoader.getClass().getClassLoader();
+
+// Set webapp class loader on the thread
+thread.setContextClassLoader(webappClassLoader);
+
+try {
+  // Look up the data source and connect to it
+
+  InitialContext ctx = new InitialContext();
+  DataSource datasource = (DataSource) ctx.lookup("java:comp/env/jdbc/TestDB");
+
+  Connection connection = datasource.getConnection();
+  Statement statement = connection.createStatement();
+
+  // Execute SQL statements here ...
+
+  connection.close();
+} catch (NamingException ne) {
+  ne.printStackTrace();
+} catch (SQLException sqle) {
+  sqle.printStackTrace();
+} finally {
+  // Switch back to the original context class loader
+  thread.setContextClassLoader(origLoader);
+}
+We're still switching around the class loaders, but now we have to use the class loader for the shielded class loader class, as this comes from the webapp class loader, and not the Liferay class loader.
+
+It's an extra couple of steps, but it should work to get to the JNDI resources you need...
+
+Enjoy!
