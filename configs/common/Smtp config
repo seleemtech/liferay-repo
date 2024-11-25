@@ -1,0 +1,36 @@
+mail.session.mail.smtp.host=smtp.gmail.com
+mail.session.mail.smtp.port=587
+mail.session.mail.smtp.user=test257600@gmail.com
+mail.session.mail.smtp.password=dmrjbhvvlztudcrf
+mail.session.mail.smtp.starttls.enable=true
+mail.session.mail.smtp.ssl.trust=smtp.gmail.com
+
+
+import com.liferay.mail.kernel.service.MailServiceUtil
+import javax.mail.internet.AddressException
+import javax.mail.internet.InternetAddress
+import com.liferay.mail.kernel.model.MailMessage
+
+InternetAddress fromAddress = null
+InternetAddress toAddress = null
+
+try {
+    
+    fromAddress = new InternetAddress("test257600@gmail.com")
+    toAddress = new InternetAddress("mahammad.saleem@careedge.in")
+
+    MailMessage mailMessage = new MailMessage()
+    mailMessage.setTo(toAddress)
+    mailMessage.setFrom(fromAddress)
+    mailMessage.setSubject("Testing mail with Plain Text 25-11-2024")
+    mailMessage.setBody("This Mail Comes From Liferay")
+
+    MailServiceUtil.sendEmail(mailMessage)
+
+
+    println "Mail sent successfully with Plain Text ggggg"
+} catch (AddressException e) {
+    e.printStackTrace()
+} catch (Exception e) {
+    e.printStackTrace()
+}
