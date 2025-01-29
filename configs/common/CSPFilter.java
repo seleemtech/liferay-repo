@@ -34,6 +34,11 @@ public class CSPFilter extends BasePortalFilter {
 		    + "frame-ancestors 'self'; "
 		    + "form-action 'self';";
 
+	//working policy
+	public static final String POLICY = "default-src 'none'; " + "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
+			+ "connect-src 'self'; " + "img-src 'self'; " + "style-src 'self' 'unsafe-inline'; " + "frame-src 'self';"
+			+ "frame-ancestors 'self'; " + "form-action 'self';";
+
 
 	public static final String POLICY = "default-src 'self'; " + "base-uri 'self'; "
 			+ "connect-src 'self' http://localhost:8080; "
