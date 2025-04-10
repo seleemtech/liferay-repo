@@ -1,6 +1,6 @@
 # Creating React Portlet In Liferay [](id=creating-react-portlet-in-liferay)
 
-Follow these steps to create your JavaScript widget `(Site Initializer)`.
+Follow these steps to create your React widget.
 
 1. Install `NVM` using below link.
 
@@ -12,29 +12,26 @@ Follow these steps to create your JavaScript widget `(Site Initializer)`.
 
    https://learn.liferay.com/w/dxp/liferay-development/tooling/reference/node-version-information
    
-   ```json
-   {
-   "name": "stealth-kart-classic-fragements",
-   "description": "Liferay Fragments project",
-   "version": "1.0.0",
-   "scripts": {
-   "build": "yo liferay-fragments:build"
-   },
-   "dependencies": {
-   "react": "16.12.0",
-   "react-dom": "16.12.0",
-   "yo": "4.3.1"
-   },
-   "devDependencies": {
-   "css-loader": "^5.0.0",
-   "generator-liferay-fragments": "2.0.2",
-   "sass-loader": "^13.3.2",
-   "style-loader": "^2.0.0"
-   }
-   }
+   ```bash
+   nvm install v16.13.0
 
-   ```
-4. Add below script in `build.gradle`
+3. Install Yeoman for the generator.
+
+   ```bash
+   npm i yo@4.3.1
+
+4. Install the Liferay JS Generator.
+   
+   ```bash
+   npm i yo@4.3.1
+
+5. Run the generator with the command below, select the JavaScript widget you want to create, and answer the prompts that follow.
+
+   
+
+   
+
+7. Add below script in `build.gradle`
 
    ```groovy
    import com.liferay.gradle.util.OSDetector
@@ -249,5 +246,5 @@ Follow these steps to create your JavaScript widget `(Site Initializer)`.
    }
    ```
 
-5. Run Gradle Build
-6. `.jar` file will be generated in `project dir -> build -> lib` folder.
+8. Run Gradle Build
+9. `.jar` file will be generated in `project dir -> build -> lib` folder.
