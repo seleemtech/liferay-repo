@@ -1,12 +1,16 @@
-# Deploying React Fragments Using Site Initializer [](id=deploying-react-fragments-using-site-initializer-guide)
+# Creating React Portlet In Liferay [](id=creating-react-portlet-in-liferay)
 
-This module is used to deploy react fragments using Extender API's `(Site Initializer)`.
+Follow these steps to create your JavaScript widget `(Site Initializer)`.
 
-1. Create Package as per below structure.
+1. Install `NVM` using below link.
 
-   ![React Fragments Folder Structure](../../Images/react-fragments-folder-structure.png)
+   https://github.com/coreybutler/nvm-windows/releases
 
-2. Add below script in `package.json` file.
+2. Install Node.js using NVM.
+   
+   **Before that, please refer to the link below to check which Node.js version is compatible with the Liferay version you are installing.**
+
+   https://learn.liferay.com/w/dxp/liferay-development/tooling/reference/node-version-information
    
    ```json
    {
@@ -30,7 +34,7 @@ This module is used to deploy react fragments using Extender API's `(Site Initia
    }
 
    ```
-3. Add below script in `build.gradle`
+4. Add below script in `build.gradle`
 
    ```groovy
    import com.liferay.gradle.util.OSDetector
@@ -245,5 +249,5 @@ This module is used to deploy react fragments using Extender API's `(Site Initia
    }
    ```
 
-4. Run Gradle Build
-5. `.jar` file will be generated in `project dir -> build -> lib` folder.
+5. Run Gradle Build
+6. `.jar` file will be generated in `project dir -> build -> lib` folder.
