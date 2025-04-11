@@ -74,4 +74,41 @@ Follow these steps to create your React widget.
 
 The adaptation process will start and you’ll be asked about some changes that Yo will do.
 
+   ```bash
+   👋 Welcome to Liferay JS Toolkit project adapter
+
+   ✔️ We have detected a project of type create-react-app
+
+   It will be tuned accordingly, so that you can deploy it to your Liferay
+   server.
+
+   But first we need you to answer some customization questions...
+
+   ? Under which category should your widget be listed? category.sample
+   ? Do you have a local installation of Liferay for development? Yes
+   ? Where is your local installation of Liferay placed?
+   D:\Liferay-servers\liferay-ce-portal-tomcat-7.4.3.106-ga106-20231207073813307\liferay-ce-portal-7.4.3.106-ga106
+
+   ⚠️ Now your project files will be modified. As a consequence, Yeoman may
+   notify you about the existence of a conflict and prompt for permission
+   to overwrite your files.
+
+   Make sure to answer 'a' or otherwise the adaptation to Liferay JS
+   Toolkit will fail.
+
+   ℹ️ Note that you can also avoid this conflict warning providing the
+   '--force' argument to Yeoman.
+
+   conflict package.json
+   ? Overwrite package.json? overwrite
+   force package.json
+   create .npmbuildrc
+   create .npmbundlerrc
+   create features\localization\Language.properties
+   conflict .gitignore
+   ? Overwrite .gitignore? overwrite
+   force .gitignore
+
+   ✔️ Your project has been successfully adapted to Liferay JS Toolkit.
+
 
