@@ -72,7 +72,7 @@ Follow these steps to create your React widget.
    ```bash
    cd <portlet_name> && yo liferay-js:adapt
 
-The adaptation process will start and you’ll be asked about some changes that Yo will do.
+8. The adaptation process will start and you’ll be asked about some changes that Yo will do.
 
    ```bash
    👋 Welcome to Liferay JS Toolkit project adapter
@@ -110,5 +110,12 @@ The adaptation process will start and you’ll be asked about some changes that 
    force .gitignore
 
    ✔️ Your project has been successfully adapted to Liferay JS Toolkit.
+   
+9. While building the React portlet, if you encounter EMFILE errors, please add the following configuration to the .npmbundlerrc file.
+
+   ```json
+      {
+	    "max-parallel-files": 32
+      }  
 
 
