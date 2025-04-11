@@ -23,7 +23,7 @@ Follow these steps to create your React widget.
 4. Install the Liferay JS Generator.
    
    ```bash
-   npm i yo@4.3.1
+   npm install -g generator-liferay-js
 
 5. Run the generator with the command below, and it will create a normal JavaScript React component.
 
