@@ -469,6 +469,9 @@ after buildRest
 then impl > java > resource.v1_0 > entityResourceImpl this method we need to implement
 After that we can check in postman using url it is available in baseresourceimpl
 
+
+Example Link
+https://github.com/dnebing/vitamins/blob/master/modules/headless-vitamins/headless-vitamins-impl/rest-openapi.yaml
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 site initializer
 ---------------
