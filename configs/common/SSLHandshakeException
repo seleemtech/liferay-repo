@@ -1,0 +1,11 @@
+Import certificate
+
+keytool -importcert -trustcacerts -file "D:\Liferay 7.4\uat\liferay-dxp-7.4.13.u40\apigeeuat.pem" -alias apigeeuat -keystore "E:\JAVA\jdk1.8.0_251\jre\lib\security\cacerts" -storepass changeit
+
+list certificate
+
+keytool -list -keystore "E:\JAVA\jdk1.8.0_251\jre\lib\security\cacerts" -storepass changeit -alias apigeeuat
+
+delete certificate
+
+keytool -delete -alias apigeeuat -keystore "E:\JAVA\jdk1.8.0_251\jre\lib\security\cacerts" -storepass changeit
