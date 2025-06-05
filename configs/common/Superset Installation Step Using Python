@@ -1,0 +1,29 @@
+https://www.python.org/ftp/python/3.10.9/python-3.10.9-amd64.exe
+
+https://visualstudio.microsoft.com/downloads/
+Download the Installer:
+
+Visit the official Microsoft Visual Studio Downloads page.
+Scroll down to the "Tools for Visual Studio" section.
+Click on "Build Tools for Visual Studio 2022" to download the installer.
+
+Make sure the following are selected:
+
+MSVC v14.x (any latest version)
+Windows 10 or 11 SDK
+CMake tools for Windows (optional, but helps)
+
+
+
+python -m venv superset-env
+cd superset-env
+.\Scripts\activate
+python -m pip install --upgrade pip setuptools wheel
+pip3 install marshmallow==3.26.1
+pip install apache-superset
+set FLASK_APP=superset
+superset db upgrade
+superset fab create-admin
+superset load-examples
+superset init
+superset run -p 8088 --with-threads --reload --debugger
